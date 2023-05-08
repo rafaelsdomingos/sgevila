@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AlunoController;
+use App\Http\Controllers\CoordenacaoController;
+use App\Http\Controllers\CursoController;
+use App\Http\Controllers\DisciplinaController;
+use App\Http\Controllers\ProfessorController;
+use App\Http\Controllers\TurmaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +46,9 @@ Route::prefix('cursos')->group(function(){
         return 'Curso '. $curso;
     })->name('cursos.show');
 });
+
+
+//Grupo de Rotas das Turmas
 
 
 //Rota inicial

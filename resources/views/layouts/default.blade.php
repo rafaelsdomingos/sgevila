@@ -20,16 +20,16 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link"  href="/users">Alunos</a>
+                        <a class="nav-link"  href="/alunos">Alunos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Cursos</a>
+                        <a class="nav-link" href="/cursos">Cursos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Professores</a>
+                        <a class="nav-link" href="/professores">Professores</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Turmas</a>
+                        <a class="nav-link" href="/turmas">Turmas</a>
                     </li>
                     </ul>
                 </div>
