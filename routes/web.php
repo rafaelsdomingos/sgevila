@@ -22,7 +22,7 @@ use App\Http\Controllers\TurmaController;
 //Grupo de Rotas dos Alunos
 Route::prefix('alunos')->group(function(){
     Route::get('', [ AlunoController::class, 'index'])->name('alunos.index');
-    Route::get('/{aluno}', [AlunoController::class, 'show'])->name('alunos.show');
+    Route::get('/{aluno}', [AlunoController::class, 'show'])->name('aluno.show');
 });
 
 
@@ -39,17 +39,11 @@ Route::prefix('professores')->group(function(){
 
 //Grupo de Rotas dos Cursos
 Route::prefix('cursos')->group(function(){
-    Route::get('', function(){
-        return 'rota padrão dos cursos';
-    })->name('cursos');;
-    Route::get('/{curso}', function($curso){
-        return 'Curso '. $curso;
-    })->name('cursos.show');
+    Route::get('', [ CursoController::class, 'index'])->name('cursos.index');
+    Route::get('/{curso}', [CursoController::class, 'show'])->name('curso.show');
 });
 
-
 //Grupo de Rotas das Turmas
-
 
 //Rota inicial
 Route::get('/', function () {

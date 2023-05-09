@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Curso extends Model
 {
     use HasFactory;
+
+    public function coordenacao(){
+        return $this->belongsTo(Coordenacao::class);
+    }
 }
+
+
