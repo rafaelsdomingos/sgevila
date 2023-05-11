@@ -12,25 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('alunos', function (Blueprint $table) {
+
+            //Dados pessoais
             $table->id();
             $table->string('nome');
-            $table->date('nascimento');
-            $table->enum('sexo', ['feminino', 'masculino']);
-            $table->string('genero')->nullable();
-            $table->string('raca')->nullable();
             $table->string('nacionalidade')->nullable();
             $table->string('naturalidade')->nullable();
-            $table->string('mae')->nullable();
-            $table->string('pai')->nullable();
-            $table->string('cpf')->unique()->nullable();
-            $table->string('rg')->nullable();
-            $table->string('emissor')->nullable();
-            $table->string('ufemissor')->nullable();
-            $table->string('cpfmae')->nullable();
-            $table->string('cpfpai')->nullable();
-            $table->string('rgmae')->nullable();
-            $table->string('rgpai')->nullable();
-            $table->string('cia')->nullable();
+            $table->enum('sexo', ['FEMININO', 'MASCULINO']);
+            $table->date('nascimento');
+            $table->string('genero')->nullable();
+            $table->string('raca')->nullable();
             $table->string('endereco')->nullable();
             $table->string('bairro')->nullable();
             $table->string('cidade')->nullable();
@@ -39,10 +30,62 @@ return new class extends Migration
             $table->enum('regional', ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII' ])->nullable();
             $table->string('fone1')->nullable();
             $table->string('fone2')->nullable();
-            $table->string('responsavel')->nullable();
-            $table->string('foneresponsavel1')->nullable();
-            $table->string('foneresponsavel2')->nullable();
             $table->string('email')->nullable();
+            $table->boolean('deficiencia')->nullable();
+            $table->string('tipo_deficiencia')->nullable();
+            $table->boolean('alergia')->nullable();
+            $table->string('tipo_alergia')->nullable();
+
+            //Escolaridade
+            $table->enum('escolaridade', ['ENSINO FUNDAMENTAL INCOMPLETO', 'ENSINO FUNDAMENTAL', 'MÉDIO INCOMPLETO', 'ENSINO MÉDIO', 'ENSINO SUPERIOR', 'ENSINO SUPERIOR INCOMPLETO' ])->nullable();
+            $table->string('serie')->nullable();
+            $table->string('turno')->nullable();
+            $table->string('instituicao')->nullable();
+            $table->enum('tipo_instituicao', ['PÚBLICA', 'PRIVADA'])->nullable();
+
+            //Documentação
+            $table->string('rg')->nullable();
+            $table->string('emissor')->nullable();
+            $table->string('uf_emissor')->nullable();
+            $table->string('cpf')->nullable();
+
+            //filiação
+            $table->string('mae')->nullable();
+            $table->string('rgmae')->nullable();
+            $table->string('emissor_rg_mae')->nullable();
+            $table->string('uf_rg_mae')->nullable();
+            $table->string('pai')->nullable();
+            $table->string('rgpai')->nullable();
+            $table->string('emissor_rg_pai')->nullable();
+            $table->string('uf_rg_pai')->nullable();
+
+            //Contatos
+            $table->string('nome_contato1')->nullable();
+            $table->string('fone_contato1')->nullable();
+            $table->string('email_contato1')->nullable();
+
+            $table->string('nome_contato2')->nullable();
+            $table->string('fone_contato2')->nullable();
+            $table->string('email_contato2')->nullable();
+
+            $table->string('nome_contato3')->nullable();
+            $table->string('fone_contato3')->nullable();
+            $table->string('email_contato3')->nullable();
+
+            //Transporte
+            $table->boolean('transporte')->nullable();
+            $table->string('cia')->nullable();
+
+            //Documentação entregue
+            $table->boolean('comp_endereco')->nullable();
+            $table->boolean('dec_matricula')->nullable();
+            $table->boolean('atestado')->nullable();
+            $table->boolean('renda')->nullable();
+            $table->boolean('certidao')->nullable();
+            $table->boolean('rg_responsavel')->nullable();
+            $table->boolean('foto')->nullable();
+
+            
             $table->timestamps();
         });
     }

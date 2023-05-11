@@ -104,7 +104,7 @@
     <div class="row mb-3">
         <div class="col-sm-12">
             <label class="form-label"><strong>Se sim, qual seria?</strong></label>
-            <input class="form-control" type="text" value="" aria-label="" readonly>
+            <input class="form-control" type="text" value="{{$aluno->tipo_deficiencia}}" aria-label="{{$aluno->tipo_deficiencia}}" readonly>
         </div>
     </div>
 
@@ -134,7 +134,7 @@
     <div class="row mb-3">
         <div class="col-sm-12">
             <label class="form-label"><strong>Se sim, especificar os alimentos/medicamentos que podem ocasionar uma reação alérgica.</strong></label>
-            <input class="form-control" type="text" value="" aria-label="" readonly>
+            <input class="form-control" type="text" value="{{$aluno->tipo_alergia}}" aria-label="{{$aluno->tipo_alergia}}" readonly>
         </div>
     </div>
 
@@ -154,21 +154,14 @@
             <input class="form-control" type="text" value="{{$aluno->rgmae}}" aria-label="{{$aluno->rgmae}}" readonly>
         </div>
 
-        <div class="col-sm-3">
-            <label class="form-label"><strong>CPF</strong></label>
-            <input class="form-control" type="text" value="{{$aluno->cpfmae}}" aria-label="{{$aluno->cpfmae}}" readonly>
+        <div class="col-sm-2">
+            <label class="form-label"><strong>EMISSOR</strong></label>
+            <input class="form-control" type="text" value="{{$aluno->emissor_rg_mae}}" aria-label="{{$aluno->emissor_rg_mae}}" readonly>
         </div>
-    </div>
 
-    <div class="row mb-3">
-        <div class="col-sm-6">
-            <label class="form-label"><strong>EMAIL</strong></label>
-            <input class="form-control" type="text" value="email mãe..." aria-label="email mãe..." readonly>
-
-        </div>
-        <div class="col-sm-6">
-            <label class="form-label"><strong>CONTATO</strong></label>
-            <input class="form-control" type="text" value="contato mãe..." aria-label="contato mãe..." readonly>
+        <div class="col-sm-1">
+            <label class="form-label"><strong>UF</strong></label>
+            <input class="form-control" type="text" value="{{$aluno->uf_rg_mae}}" aria-label="{{$aluno->uf_rg_mae}}" readonly>
         </div>
     </div>
 
@@ -185,58 +178,71 @@
             <input class="form-control" type="text" value="{{$aluno->rgpai}}" aria-label="{{$aluno->rgpai}}" readonly>
         </div>
 
-        <div class="col-sm-3">
-            <label class="form-label"><strong>CPF</strong></label>
-            <input class="form-control" type="text" value="{{$aluno->cpfpai}}" aria-label="{{$aluno->cpfpai}}" readonly>
+        <div class="col-sm-2">
+            <label class="form-label"><strong>EMISSOR</strong></label>
+            <input class="form-control" type="text" value="{{$aluno->emissor_rg_pai}}" aria-label="{{$aluno->emissor_rg_pai}}" readonly>
+        </div>
+
+        <div class="col-sm-1">
+            <label class="form-label"><strong>UF</strong></label>
+            <input class="form-control" type="text" value="{{$aluno->uf_rg_pai}}" aria-label="{{$aluno->uf_rg_pai}}" readonly>
         </div>
     </div>
+
+
+
+    <h3 class="text-center h4 mt-5 mb-4">LISTA DE CONTATOS</h3>
 
     <div class="row mb-3">
         <div class="col-sm-6">
-            <label class="form-label"><strong>EMAIL</strong></label>
-            <input class="form-control" type="text" value="email pai..." aria-label="email pai..." readonly>
+            <label class="form-label"><strong>NOME</strong></label>
+            <input class="form-control" type="text" value="{{$aluno->nome_contato1}}" aria-label="{{$aluno->nome_contato1}}" readonly>
 
         </div>
+        <div class="col-sm-2">
+            <label class="form-label"><strong>FONE</strong></label>
+            <input class="form-control" type="text" value="{{$aluno->fone_contato1}}" aria-label="{{$aluno->fone_contato1}}" readonly>
+        </div>
+        <div class="col-sm-4">
+            <label class="form-label"><strong>EMAIL</strong></label>
+            <input class="form-control" type="text" value="{{$aluno->email_contato1}}" aria-label="{{$aluno->email_contato1}}" readonly>
+        </div>
+    </div>
+
+
+    <div class="row mb-3">
         <div class="col-sm-6">
-            <label class="form-label"><strong>CONTATO</strong></label>
-            <input class="form-control" type="text" value="contato pai..." aria-label="contato pai..." readonly>
+            <label class="form-label"><strong>NOME</strong></label>
+            <input class="form-control" type="text" value="{{$aluno->nome_contato2}}" aria-label="{{$aluno->nome_contato2}}" readonly>
+
         </div>
-    </div>
-
-
-    <h3 class="text-center h4 mt-5 mb-4">CONTATOS</h3>
-
-    <div class="row mb-3">
+        <div class="col-sm-2">
+            <label class="form-label"><strong>FONE</strong></label>
+            <input class="form-control" type="text" value="{{$aluno->fone_contato2}}" aria-label="{{$aluno->fone_contato2}}" readonly>
+        </div>
         <div class="col-sm-4">
-            <label class="form-label"><strong>TELEFONE/WHATSAPP 1</strong></label>
-            <input class="form-control" type="text" value="" aria-label="email pai..." readonly>
-
-        </div>
-        <div class="col-sm-8">
-            <label class="form-label"><strong>NOME DO CONTATO 2</strong></label>
-            <input class="form-control" type="text" value="" aria-label="contato pai..." readonly>
-        </div>
-    </div>
-
-
-    <div class="row mb-3">
-        <div class="col-sm-4">
-            <label class="form-label"><strong>TELEFONE/WHATSAPP 2</strong></label>
-            <input class="form-control" type="text" value="" aria-label="email pai..." readonly>
-
-        </div>
-        <div class="col-sm-8">
-            <label class="form-label"><strong>NOME DO CONTATO 2</strong></label>
-            <input class="form-control" type="text" value="" aria-label="contato pai..." readonly>
-        </div>
-    </div>
-
-    <div class="row mb-3">
-        <div class="col-sm-12">
             <label class="form-label"><strong>EMAIL</strong></label>
-            <input class="form-control" type="text" value="{{$aluno->email}}" aria-label="{{$aluno->email}}" readonly>
+            <input class="form-control" type="text" value="{{$aluno->email_contato2}}" aria-label="{{$aluno->email_contato2}}" readonly>
         </div>
     </div>
+
+
+    <div class="row mb-3">
+        <div class="col-sm-6">
+            <label class="form-label"><strong>NOME</strong></label>
+            <input class="form-control" type="text" value="{{$aluno->nome_contato3}}" aria-label="{{$aluno->nome_contato3}}" readonly>
+
+        </div>
+        <div class="col-sm-2">
+            <label class="form-label"><strong>FONE</strong></label>
+            <input class="form-control" type="text" value="{{$aluno->fone_contato3}}" aria-label="{{$aluno->fone_contato3}}" readonly>
+        </div>
+        <div class="col-sm-4">
+            <label class="form-label"><strong>EMAIL</strong></label>
+            <input class="form-control" type="text" value="{{$aluno->email_contato3}}" aria-label="{{$aluno->email_contato3}}" readonly>
+        </div>
+    </div>
+
 </div>
 
 
