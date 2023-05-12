@@ -47,5 +47,5 @@ Route::prefix('cursos')->group(function(){
 
 //Rota inicial
 Route::get('/', function () {
-    return view('layouts.default');
+    return view('layouts.main');
 });
