@@ -7,32 +7,35 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
-  <!-- Page Heading -->
-  <h1 class="h3 mb-2 text-gray-800">Alunos</h1>
-
   <!-- DataTales Example -->
   <div class="card shadow mb-4">
-      <div class="card-header py-3">
+      <div class="card-header py-3 d-flex justify-content-between align-items-center">
           <h6 class="m-0 font-weight-bold text-primary">Lista de Alunos</h6>
+
+          <a href="#" class="btn btn-success">
+            <i class="fas fa-plus"></i>
+            Novo Aluno
+          </a>
+
       </div>
       <div class="card-body">
           <div class="table-responsive">
               <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                       <tr>
-                          <th>Nome</th>
-                          <th>Nascimento</th>
-                          <th>Fone 1</th>
-                          <th>Email</th>
+                          <th>NOME</th>
+                          <th>FONE 1</th>
+                          <th>FONE 2</th>
+                          <th>EMAIL</th>
                           <th></th>
                       </tr>
                   </thead>
                   <tfoot>
                       <tr>
-                          <th>Nome</th>
-                          <th>Nascimento</th>
-                          <th>Fone 1</th>
-                          <th>Email</th>
+                          <th>NOME</th>
+                          <th>FONE 1</th>
+                          <th>FONE 2</th>
+                          <th>EMAIL</th>
                           <th></th>
                       </tr>
                   </tfoot>
@@ -44,8 +47,9 @@
                           <td>{{$aluno->fone_contato2}}</td>
                           <td>{{$aluno->email_contato2}}</td>
                           <td>
-                            <a href="/alunos/{{$aluno->id}}" class="btn btn-info btn-circle btn-sm">
+                            <a href="/alunos/{{$aluno->id}}" class="btn btn-primary btn-sm">
                               <i class="fas fa-info-circle"></i>
+                              Detalhes
                             </a>
 
                             </a>
