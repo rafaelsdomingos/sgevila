@@ -23,6 +23,7 @@ use App\Http\Controllers\TurmaController;
 Route::prefix('alunos')->group(function(){
     Route::get('', [ AlunoController::class, 'index'])->name('alunos.index');
     Route::get('/{aluno}', [AlunoController::class, 'show'])->name('aluno.show');
+    Route::get('/novo', [AlunoController::class, 'novo'])->name('aluno.novo');
 });
 
 
