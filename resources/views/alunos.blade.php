@@ -12,7 +12,7 @@
       <div class="card-header py-3 d-flex justify-content-between align-items-center">
           <h6 class="m-0 font-weight-bold text-primary">Lista de Alunos</h6>
 
-          <a href="#" class="btn btn-success">
+          <a href="{{route('alunos.create')}}" class="btn btn-success">
             <i class="fas fa-plus"></i>
             Novo Aluno
           </a>

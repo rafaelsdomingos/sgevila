@@ -53,19 +53,25 @@
             <li class="nav-item active">
                 <a class="nav-link" href="/cursos">
                     <i class="fas fa-fw"></i>
-                    <span>Cursos</span></a>
+                    <span>Coordenações</span></a>
             </li>
 
             <li class="nav-item active">
-                <a class="nav-link" href="/turmas">
+                <a class="nav-link" href="/cursos">
                     <i class="fas fa-fw"></i>
-                    <span>Turmas</span></a>
+                    <span>Cursos</span></a>
             </li>
 
             <li class="nav-item active">
                 <a class="nav-link" href="/professores">
                     <i class="fas fa-fw"></i>
                     <span>Professores</span></a>
+            </li>
+
+            <li class="nav-item active">
+                <a class="nav-link" href="/turmas">
+                    <i class="fas fa-fw"></i>
+                    <span>Turmas</span></a>
             </li>
 
             <!-- Divider -->

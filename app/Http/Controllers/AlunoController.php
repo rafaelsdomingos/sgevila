@@ -20,4 +20,8 @@ class AlunoController extends Controller
             'aluno'=>$aluno,
         ]);
     }
+
+    public function create(){
+        return view('novoaluno');
+    }
 }

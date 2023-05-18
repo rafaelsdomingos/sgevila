@@ -22,8 +22,10 @@ use App\Http\Controllers\TurmaController;
 //Grupo de Rotas dos Alunos
 Route::prefix('alunos')->group(function(){
     Route::get('', [ AlunoController::class, 'index'])->name('alunos.index');
+    Route::post('', [ AlunoController::class, 'store'])->name('alunos.store');
+    Route::get('/create', [ AlunoController::class, 'create'])->name('alunos.create');
     Route::get('/{aluno}', [AlunoController::class, 'show'])->name('aluno.show');
-    Route::get('/novo', [AlunoController::class, 'novo'])->name('aluno.novo');
+    
 });
 
 
@@ -35,6 +37,14 @@ Route::prefix('professores')->group(function(){
     Route::get('/{professor}', function($professor){
         return 'Professor '. $professor;
     })->name('professores.show');
+});
+
+
+//Grupo de Rotas dos Coordenações
+Route::prefix('coordenacoes')->group(function(){
+    Route::get('', [ CursoController::class, 'index'])->name('coordenacoes.index');
+    Route::post('', [ CursoController::class, 'store'])->name('coordenacao.store');
+    Route::get('/{coordenacao}', [CursoController::class, 'show'])->name('coordenacao.show');
 });
 
 
@@ -50,3 +60,6 @@ Route::prefix('cursos')->group(function(){
 Route::get('/', function () {
     return view('layouts.main');
 });
+
+//Rota teste
+Route::get('novoaluno', [AlunoController::class, 'new'])->name('aluno.new');
