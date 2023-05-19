@@ -24,42 +24,37 @@ Route::prefix('alunos')->group(function(){
     Route::get('', [ AlunoController::class, 'index'])->name('alunos.index');
     Route::post('', [ AlunoController::class, 'store'])->name('alunos.store');
     Route::get('/create', [ AlunoController::class, 'create'])->name('alunos.create');
-    Route::get('/{aluno}', [AlunoController::class, 'show'])->name('aluno.show');
+    Route::get('/{aluno}', [AlunoController::class, 'show'])->name('alunos.show');
     
+});
+
+//Grupo de Rotas dos Coordenações
+Route::prefix('coordenacoes')->group(function(){
+    Route::get('', [ CoordenacaoController::class, 'index'])->name('coordenacoes.index');
+    Route::post('', [ CoordenacaoController::class, 'store'])->name('coordenacoes.store');
+    Route::get('/create', [CoordenacaoController::class, 'create'])->name('coordenacoes.create');
+    Route::get('/{coordenacao}', [CoordenacaoController::class, 'show'])->name('coordenacoes.show');
+});
+
+//Grupo de Rotas dos Cursos
+Route::prefix('cursos')->group(function(){
+    Route::get('', [ CursoController::class, 'index'])->name('cursos.index');
+    Route::post('', [ CursoController::class, 'store'])->name('cursos.store');
+    Route::get('/create', [CursoController::class, 'create'])->name('cursos.create');
+    Route::get('/{curso}', [CursoController::class, 'show'])->name('cursos.show');
 });
 
 
 //Grupo de Rotas dos Professores
 Route::prefix('professores')->group(function(){
-    Route::get('', function(){
-        return 'rota padrão dos professores';
-    })->name('professores');;
-    Route::get('/{professor}', function($professor){
-        return 'Professor '. $professor;
-    })->name('professores.show');
+    Route::get('', [ ProfessorController::class, 'index'])->name('professores.index');
+    Route::post('', [ ProfessorController::class, 'store'])->name('professores.store');
+    Route::get('/create', [ProfessorController::class, 'create'])->name('professores.create');
+    Route::get('/{professor}', [ProfessorController::class, 'show'])->name('professores.show');
 });
 
-
-//Grupo de Rotas dos Coordenações
-Route::prefix('coordenacoes')->group(function(){
-    Route::get('', [ CursoController::class, 'index'])->name('coordenacoes.index');
-    Route::post('', [ CursoController::class, 'store'])->name('coordenacao.store');
-    Route::get('/{coordenacao}', [CursoController::class, 'show'])->name('coordenacao.show');
-});
-
-
-//Grupo de Rotas dos Cursos
-Route::prefix('cursos')->group(function(){
-    Route::get('', [ CursoController::class, 'index'])->name('cursos.index');
-    Route::get('/{curso}', [CursoController::class, 'show'])->name('curso.show');
-});
-
-//Grupo de Rotas das Turmas
 
 //Rota inicial
 Route::get('/', function () {
     return view('layouts.main');
 });
-
-//Rota teste
-Route::get('novoaluno', [AlunoController::class, 'new'])->name('aluno.new');

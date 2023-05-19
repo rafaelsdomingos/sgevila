@@ -14,7 +14,10 @@ return new class extends Migration
         Schema::create('coordenacaos', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
+            $table->string('sigla');
             $table->string('coordenador');
+            $table->string('fone');
+            $table->string('email');
             $table->timestamps();
         });
     }

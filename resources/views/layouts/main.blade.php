@@ -45,13 +45,13 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="/alunos">
+                <a class="nav-link" href="{{route('alunos.index')}}">
                     <i class="fas fa-fw fa-user-graduate"></i>
                     <span>Alunos</span></a>
             </li>
 
             <li class="nav-item active">
-                <a class="nav-link" href="/cursos">
+                <a class="nav-link" href="{{route('coordenacoes.index')}}">
                     <i class="fas fa-fw"></i>
                     <span>Coordenações</span></a>
             </li>

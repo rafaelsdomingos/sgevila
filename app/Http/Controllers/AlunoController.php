@@ -10,18 +10,18 @@ class AlunoController extends Controller
   
     public function index(){
         $alunos = Aluno::all();
-        return view('alunos', [
+        return view('alunos.index', [
             'alunos'=>$alunos,
         ]);
     }
     
     public function show(Aluno $aluno){
-        return view('aluno', [
+        return view('alunos.show', [
             'aluno'=>$aluno,
         ]);
     }
 
     public function create(){
-        return view('novoaluno');
+        return view('alunos.create');
     }
 }
