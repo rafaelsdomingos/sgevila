@@ -120,5 +120,8 @@
 
 @endsection
 
+@push('level-plugins')
+  <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
+@endpush
 
 
