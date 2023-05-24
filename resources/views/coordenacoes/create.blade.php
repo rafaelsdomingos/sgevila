@@ -54,69 +54,53 @@
                         <label class="form-label"><strong>EMAIL</strong></label>
                         <input class="form-control" name="email" type="email" value="" aria-label="" >
                     </div>
-                </div>
-
-                <div class="row mt-5 mb-3">
-
-                    <div class="col-sm-12 d-flex justify-content-end">
-                        
-                        <button class="btn btn-warning" type="reset">
-                            <i class="fas fa-trash"></i>
-                            Limpar
-                        </button>
-
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#storeCoord">
-                            <i class="fas fa-save"></i>
-                            Salvar
-                        </button>
-
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            Launch demo modal
-                        </button>
-
-                    </div>
-
-                </div>
-                
-                
-
-            </form>
-
-            
+                </div>           
   
         <!-- Final do Corpo do Cartão -->
         </div>
+        
         <div class="card-header py-3 d-flex justify-content-between align-items-center">
-            <h6 class="m-0 font-weight-bold text-primary"></h6>          
+            <h6 class="m-0 font-weight-bold text-primary"></h6>
 
+            <div>
+                <button class="btn btn-warning" type="reset">
+                    <i class="fas fa-trash"></i>
+                    Limpar
+                </button>
+    
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#salvarCoord">
+                    <i class="fas fa-save"></i>
+                    Salvar
+                </button>
+            </div>
+            
+        </div>
+
+            <!--Modal para Salvar -->
+            <div class="modal fade" id="salvarCoord" tabindex="-1" aria-labelledby="salvarCoord" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h6 class="modal-title fs-5" id="salvarCoordLabel"><strong>Salvar Coordenação</strong></h6>
+                        </div>
+                        <div class="modal-body">
+                            Deseja salvar a nova coordenação?
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                   
+        </form>
         </div>
     <!-- Final do Cartão -->
     </div>
 
 <!-- End Page Content -->
 </div>
-
-<!--Modal para Salvar -->
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
 
 @endsection
 

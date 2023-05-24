@@ -24,4 +24,12 @@ class AlunoController extends Controller
     public function create(){
         return view('alunos.create');
     }
+
+    public function store(Request $request){
+        dd($request->all());
+        //$data = $request->all();
+        //$aluno = Aluno::create($data);
+
+        //return redirect()->route('alunos.index');
+    }
 }

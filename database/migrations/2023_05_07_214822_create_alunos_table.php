@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nome');
             $table->string('nacionalidade')->nullable();
             $table->string('naturalidade')->nullable();
-            $table->enum('sexo', ['FEMININO', 'MASCULINO']);
+            $table->string('sexo');
             $table->date('nascimento');
             $table->string('genero')->nullable();
             $table->string('raca')->nullable();
@@ -27,7 +27,7 @@ return new class extends Migration
             $table->string('cidade')->nullable();
             $table->string('uf')->nullable();
             $table->string('cep')->nullable();
-            $table->enum('regional', ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII' ])->nullable();
+            $table->string('regional')->nullable();
             $table->string('fone1')->nullable();
             $table->string('fone2')->nullable();
             $table->string('email')->nullable();
@@ -37,11 +37,11 @@ return new class extends Migration
             $table->string('tipo_alergia')->nullable();
 
             //Escolaridade
-            $table->enum('escolaridade', ['ENSINO FUNDAMENTAL INCOMPLETO', 'ENSINO FUNDAMENTAL', 'MÉDIO INCOMPLETO', 'ENSINO MÉDIO', 'ENSINO SUPERIOR', 'ENSINO SUPERIOR INCOMPLETO' ])->nullable();
+            $table->string('escolaridade')->nullable();
             $table->string('serie')->nullable();
             $table->string('turno')->nullable();
             $table->string('instituicao')->nullable();
-            $table->enum('tipo_instituicao', ['PÚBLICA', 'PRIVADA'])->nullable();
+            $table->string('tipo_instituicao')->nullable();
 
             //Documentação
             $table->string('rg')->nullable();
