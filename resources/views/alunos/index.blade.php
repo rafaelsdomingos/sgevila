@@ -14,7 +14,7 @@
                                 <h6 class="fw-semibold mb-0">Nome</h6>
                             </th>
                             <th class="border-bottom-0">
-                                <h6 class="fw-semibold mb-0">Nascimento</h6>
+                                <h6 class="fw-semibold mb-0">Fone 1</h6>
                             </th>
                             <th class="border-bottom-0">
                                 <h6 class="fw-semibold mb-0">Fone 2</h6>

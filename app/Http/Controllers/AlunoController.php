@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Aluno;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreUpdateAlunoFormRequest;
+
 
 class AlunoController extends Controller
 {
@@ -25,11 +27,23 @@ class AlunoController extends Controller
         return view('alunos.create');
     }
 
-    public function store(Request $request){
-        dd($request->all());
-        //$data = $request->all();
-        //$aluno = Aluno::create($data);
+    public function store(StoreUpdateAlunoFormRequest $request){
+        $data = $request->all();
+        //dd($data);
+        $aluno = Aluno::create($data);
+        return redirect()->route('alunos.index');
+    }
 
+    public function edit(Aluno $aluno){
+        return view('alunos.edit', [
+            'aluno'=>$aluno,
+        ]);
+    }
+
+    public function update(StoreUpdateAlunoFormRequest $request){
+        $data = $request->all();
+        dd($data);
+        //$aluno = Aluno::update($data);
         //return redirect()->route('alunos.index');
     }
 }

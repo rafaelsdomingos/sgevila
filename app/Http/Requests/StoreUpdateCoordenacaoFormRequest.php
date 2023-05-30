@@ -23,6 +23,7 @@ class StoreUpdateCoordenacaoFormRequest extends FormRequest
     {
         return [
             'nome' => 'required|string|max:255|min:3',
+            'sigla' => 'required|string',
             'coordenador' => 'required|string|max:255|min:3',
             'fone' => 'string',
             'email' => 'string',

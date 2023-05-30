@@ -5,40 +5,41 @@
 <div class="container-fluid">
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
-            <h5 class="card-title fw-semibold">Cadastro de Alunos</h5>
+            <h5 class="card-title fw-semibold"></h5>
             <div>
-                <a href="{{route('alunos.index')}}" class="btn btn-success">
-                    <i class="fas fa-arrow-left"></i>
+                <a href="{{route('alunos.index')}}" class="btn btn-primary">
+                    <i class="ti ti-arrow-left"></i>
                     Voltar
                 </a>
             </div>
         </div>
         <div class="card-body">
 
-            <h5 class="card-title text-center my-3">DADOS PESSOAIS</h5>           
+            <h5 class="card-title text-center my-3">DADOS PESSOAIS</h5>
+            
                         
-            <form method="POST" action="{{route('alunos.store')}}">
+            <form method="" action="#">
                 @csrf
                 <div class="row">
                     <div class="col-md-10 mb-3">
                         <label class="form-label">Nome Completo</label>
-                        <input class="form-control" name="nome" type="text" value="" aria-label="" >
+                        <input class="form-control" name="nome" type="text" value="{{$aluno->nome}}" aria-label="" >
                       
                     </div>
                     <div class="col-sm-2 mb-3">
                         <label class="form-label">Nascimento</label>
-                        <input class="form-control" name="nascimento" type="date" value="" aria-label="" >
+                        <input class="form-control" name="nascimento" type="text" value="{{$aluno->nascimento}}" aria-label="" >
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-sm-3 mb-3">
                         <label class="form-label">Nacionalidade</label>
-                        <input class="form-control" name="nacionalidade" type="text" value="" aria-label="" >
+                        <input class="form-control" name="nacionalidade" type="text" value="{{$aluno->nacionalidade}}" aria-label="" >
                     </div>
                     <div class="col-sm-3 mb-3">
                         <label class="form-label">Naturalidade</label>
-                        <input class="form-control" name="naturalidade" type="text" value="" aria-label="" >
+                        <input class="form-control" name="naturalidade" type="text" value="{{$aluno->naturalidade}}" aria-label="" >
                     </div>
                     <div class="col-sm-3 mb-3">
                         <label class="form-label">Sexo</label>
@@ -50,56 +51,56 @@
                     </div>
                     <div class="col-sm-3 mb-3">
                         <label class="form-label">Cor / Raça</label>
-                        <input class="form-control" name="raca" type="text" value="" aria-label="" >
+                        <input class="form-control" name="raca" type="text" value="{{$aluno->raca}}" aria-label="" >
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-sm-12 mb-3">
                         <label class="form-label">Endereço</label>
-                        <input class="form-control" name="endereco" type="text" aria-label="" >
+                        <input class="form-control" name="endereco" type="text" value="{{$aluno->endereco}}" aria-label="" >
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-sm-4 mb-3">
                         <label class="form-label">Bairro</label>
-                        <input class="form-control" name="bairro" type="text" aria-label="" >
+                        <input class="form-control" name="bairro" type="text" value="{{$aluno->bairro}}" aria-label="" >
                     </div>
 
                     <div class="col-sm-4 mb-3">
                         <label class="form-label">Cidade</label>
-                        <input class="form-control" name="cidade" type="text" aria-label="" >
+                        <input class="form-control" name="cidade" type="text" value="{{$aluno->cidade}}" aria-label=""  >
                     </div>
 
                     <div class="col-sm-1 mb-3">
                         <label class="form-label">UF</label>
-                        <input class="form-control" name="uf" type="text" aria-label="" >
+                        <input class="form-control" name="uf" type="text" value="{{$aluno->uf}}" aria-label="" >
                     </div>
 
                     <div class="col-sm-2 mb-3">
                         <label class="form-label">CEP</label>
-                        <input class="form-control cep" name="cep" type="text" aria-label="" >
+                        <input class="form-control" name="cep" type="text" value="{{$aluno->cep}}" aria-label="" >
                     </div>
 
                     <div class="col-sm-1 mb-3">
                         <label class="form-label">SER</label>
-                        <input class="form-control" name="regional" type="text" aria-label="" >
+                        <input class="form-control" name="regional" type="text" value="{{$aluno->regional}}" aria-label="" >
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-sm-3 mb-3">
-                        <label class="form-label">Celular</label>
-                        <input class="form-control celular" name="fone1" type="text" aria-label="" >
+                        <label class="form-label">Contato 1</label>
+                        <input class="form-control telefone" name="fone1" type="text" value="{{$aluno->contato1}}" aria-label="" >
                     </div>
                     <div class="col-sm-3 mb-3">
-                        <label class="form-label">Telefone</label>
-                        <input class="form-control telefone" name="fone2" type="text" aria-label="" >
+                        <label class="form-label">Contato 2</label>
+                        <input class="form-control telefone" name="fone2" type="text" value="{{$aluno->contato2}}" aria-label="" >
                     </div>
                     <div class="col-sm-6 mb-3">
                         <label class="form-label">Email</label>
-                        <input class="form-control" name="email" type="email" aria-label="" >
+                        <input class="form-control" name="email" type="email" value="{{$aluno->email}}" aria-label="" >
                     </div>
                 </div>
 
@@ -154,7 +155,7 @@
 
                     <div class="col-sm-3 mb-3">
                         <label class="form-label">Série</label>
-                        <input class="form-control" name="serie" type="text" aria-label="" >
+                        <input class="form-control" name="serie" type="text" value="{{$aluno->serie}}" aria-label="" >
                     </div>
 
                     <div class="col-sm-3 mb-3">
@@ -171,7 +172,7 @@
                 <div class="row">
                     <div class="col-sm-9 mb-3">
                         <label class="form-label">Instituição de Ensino</label>
-                        <input class="form-control" name="instituicao" type="text" aria-label="" >
+                        <input class="form-control" name="instituicao" type="text" value="{{$aluno->instituicao}}" aria-label="" >
                     </div>
 
                     <div class="col-sm-3 mb-3">
@@ -190,22 +191,22 @@
                 <div class="row">
                     <div class="col-sm-4 mb-3">
                         <label class="form-label">RG</label>
-                        <input class="form-control" name="rg" type="text" aria-label="" >
+                        <input class="form-control" name="rg" type="text" value="{{$aluno->rg}}" aria-label="" >
                     </div>
 
-                    <div class="col-sm-2 mb-3">
+                    <div class="col-sm-4 mb-3">
                         <label class="form-label">Emissor</label>
-                        <input class="form-control" name="emissor" type="text" aria-label="" >
+                        <input class="form-control" name="emissor" type="text" value="{{$aluno->emissor}}" aria-label="" >
                     </div>
 
-                    <div class="col-sm-1 mb-3">
+                    <div class="col-sm-4 mb-3">
                         <label class="form-label">UF</label>
-                        <input class="form-control" name="uf_emissor" type="text" aria-label="" >
+                        <input class="form-control" name="uf_emissor" type="text" value="{{$aluno->uf_emissor}}" aria-label="" >
                     </div>
 
-                    <div class="col-sm-5 mb-3">
+                    <div class="col-sm-4 mb-3">
                         <label class="form-label">CPF</label>
-                        <input class="form-control" id="cpf" name="cpf" type="text" aria-label="" >
+                        <input class="form-control" name="cpf" type="text" value="{{$aluno->cpf}}" aria-label="" >
                     </div>
                 </div>
 
@@ -215,44 +216,44 @@
                 <div class="row">
                     <div class="col-sm-6 mb-3">
                         <label class="form-label">Nome da Mãe</label>
-                        <input class="form-control" name="mae" type="text" aria-label="" >
+                        <input class="form-control" name="mae" type="text" value="{{$aluno->mae}}" aria-label="" >
                     </div>
 
                     <div class="col-sm-3 mb-3">
                         <label class="form-label">RG da Mãe</label>
-                        <input class="form-control" name="rgmae" type="text" aria-label="" >
+                        <input class="form-control" name="rgmae" type="text" value="{{$aluno->rgmae}}" aria-label="" >
                     </div>
 
                     <div class="col-sm-2 mb-3">
                         <label class="form-label">Emissor</label>
-                        <input class="form-control" name="emissor_rg_mae" type="text" aria-label="" >
+                        <input class="form-control" name="emissor_rg_mae" type="text" value="{{$aluno->emissor_rg_mae}}" aria-label="" >
                     </div>
 
                     <div class="col-sm-1 mb-3">
                         <label class="form-label">UF</label>
-                        <input class="form-control" name="uf_rg_mae" type="text" aria-label="" >
+                        <input class="form-control" name="uf_rg_mae" type="text" value="{{$aluno->uf_rg_mae}}" aria-label="" >
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-sm-6 mb-3">
                         <label class="form-label">Nome do Pai</label>
-                        <input class="form-control" name="pai" type="text" aria-label="" >
+                        <input class="form-control" name="pai" type="text" value="{{$aluno->pai}}" aria-label="" >
                     </div>
 
                     <div class="col-sm-3 mb-3">
                         <label class="form-label">RG do Pai</label>
-                        <input class="form-control" name="rgpai" type="text" aria-label="" >
+                        <input class="form-control" name="rgpai" type="text" value="{{$aluno->rgpai}}" aria-label="" >
                     </div>
 
                     <div class="col-sm-2 mb-3">
                         <label class="form-label">Emissor</label>
-                        <input class="form-control" name="emissor_rg_pai" type="text" aria-label="" >
+                        <input class="form-control" name="emissor_rg_pai" type="text" value="{{$aluno->emissor_rg_pai}}" aria-label="" >
                     </div>
 
                     <div class="col-sm-1 mb-3">
                         <label class="form-label">UF</label>
-                        <input class="form-control" name="uf_rg_pai" type="text" aria-label="" >
+                        <input class="form-control" name="uf_rg_pai" type="text" value="{{$aluno->uf_rg_pai}}" aria-label="" >
                     </div>
                 </div>
 
@@ -262,51 +263,51 @@
                 <div class="row">
                     <div class="col-sm-5 mb-3">
                         <label class="form-label">Nome Contato 1</strong></label>
-                        <input class="form-control" name="nome_contato1" type="text" aria-label="" >
+                        <input class="form-control" name="nome_contato1" type="text" value="{{$aluno->nome_contato1}}" aria-label="" >
                     </div>
 
                     <div class="col-sm-3 mb-3">
-                        <label class="form-label">Celular</label>
-                        <input class="form-control" name="fone_contato1" type="text" aria-label="" >
+                        <label class="form-label">Fone</label>
+                        <input class="form-control" name="fone_contato1" type="text" value="{{$aluno->fone_contato1}}" aria-label="" >
                     </div>
 
                     <div class="col-sm-4 mb-3">
                         <label class="form-label">Email</label>
-                        <input class="form-control" name="email_contato1" type="text" aria-label="" >
+                        <input class="form-control" name="email_contato1" type="text" value="{{$aluno->email_contato1}}" aria-label="" >
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-sm-5 mb-3">
                         <label class="form-label">Nome Contato 2</label>
-                        <input class="form-control" name="nome_contato2" type="text" aria-label="" >
+                        <input class="form-control" name="nome_contato2" type="text" value="{{$aluno->nome_contato2}}" aria-label="" >
                     </div>
 
                     <div class="col-sm-3 mb-3">
-                        <label class="form-label">Celular</label>
-                        <input class="form-control" name="fone_contato2" type="text" aria-label="" >
+                        <label class="form-label">Fone</label>
+                        <input class="form-control" name="fone_contato2" type="text" value="{{$aluno->fone_contato2}}" aria-label="" >
                     </div>
 
                     <div class="col-sm-4 mb-3">
                         <label class="form-label">Email</label>
-                        <input class="form-control" name="email_contato2" type="text" aria-label="" >
+                        <input class="form-control" name="email_contato2" type="text" value="{{$aluno->email_contato2}}" aria-label="" >
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-sm-5 mb-3">
                         <label class="form-label">Nome Contato 3</label>
-                        <input class="form-control" name="nome_contato3" type="text" aria-label="" >
+                        <input class="form-control" name="nome_contato3" type="text" value="{{$aluno->nome_contao3}}" aria-label="" >
                     </div>
 
                     <div class="col-sm-3 mb-3">
-                        <label class="form-label">Celular</label>
-                        <input class="form-control" name="fone_contato3" type="text" aria-label="" >
+                        <label class="form-label">Fone</label>
+                        <input class="form-control" name="fone_contato3" type="text" value="{{$aluno->fone_contato3}}" aria-label="" >
                     </div>
 
                     <div class="col-sm-4 mb-3">
                         <label class="form-label">Email</label>
-                        <input class="form-control" name="email_contato3" type="text" aria-label="" >
+                        <input class="form-control" name="email_contato3" type="text" value="{{$aluno->email_contato3}}" aria-label="" >
                     </div>
                 </div>
 
@@ -369,7 +370,7 @@
                     </div>
                 </div>
 
-                <!--Botões de submit-->
+                <!--Botões de Voltar, Editar e Deletar-->
                 <div class="d-flex justify-content-between align-items-center">
                     <h5 class="card-title fw-semibold"></h5>
                     <div>
@@ -378,7 +379,7 @@
                             Limpar
                         </button>
 
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#salvarAluno">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#atualizarAluno">
                             <i class="fas fa-save"></i>
                             Salvar
                         </button>
@@ -386,11 +387,11 @@
                 </div>
 
                 <!--Modal para Salvar -->
-                <div class="modal fade" id="salvarAluno" tabindex="-1" aria-labelledby="salvarAluno" aria-hidden="true">
+                <div class="modal fade" id="atualizarAluno" tabindex="-1" aria-labelledby="atualizarAluno" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h6 class="modal-title fs-5" id="salvarAlunoLabel"><strong>Salvar Aluno</strong></h6>
+                                <h6 class="modal-title fs-5" id="atualizarAlunoLabel"><strong>Atualizar Aluno</strong></h6>
                             </div>
                             <div class="modal-body">
                                 Deseja salvar o nome Aluno?
@@ -414,15 +415,3 @@
 
 
 @endsection
-
-@push('scripts')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $('.cpf').mask('000.000.000-00', {reverse: true});
-            $('.cep').mask('00000-000');
-            $('.telefone').mask('(00) 0000-0000');
-            $('.celular').mask('(00) 00000-0000');
-        });
-    </script>
-@endpush

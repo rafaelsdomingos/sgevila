@@ -21,11 +21,11 @@ use App\Http\Controllers\TurmaController;
 
 //Grupo de Rotas dos Alunos
 Route::prefix('alunos')->group(function(){
+    Route::get('/{aluno}/edit', [ AlunoController::class, 'edit'])->name('alunos.edit');
     Route::get('', [ AlunoController::class, 'index'])->name('alunos.index');
     Route::post('', [ AlunoController::class, 'store'])->name('alunos.store');
     Route::get('/create', [ AlunoController::class, 'create'])->name('alunos.create');
     Route::get('/{aluno}', [AlunoController::class, 'show'])->name('alunos.show');
-    
 });
 
 //Grupo de Rotas dos Coordenações

@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('nome');
             $table->string('nacionalidade')->nullable();
             $table->string('naturalidade')->nullable();
-            $table->string('sexo');
-            $table->date('nascimento');
+            $table->string('sexo')->nullable();
+            $table->date('nascimento')->nullable();
             $table->string('genero')->nullable();
             $table->string('raca')->nullable();
             $table->string('endereco')->nullable();
