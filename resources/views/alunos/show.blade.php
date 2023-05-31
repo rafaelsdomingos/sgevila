@@ -16,11 +16,6 @@
                     <i class="ti ti-pencil"></i>
                     Editar
                 </a>
-
-                <a href="#" class="btn btn-danger">
-                    <i class="ti ti-trash"></i>
-                    Deletar
-                </a>
             </div>
         </div>
         <div class="card-body">
@@ -28,7 +23,8 @@
             <h5 class="card-title text-center my-3">DADOS PESSOAIS</h5>
             
                         
-            <form method="" action="#">
+            <form method="POST" action="{{route('alunos.destroy', $aluno->id)}}">
+                @method('DELETE')
                 @csrf
                 <div class="row">
                     <div class="col-md-10 mb-3">
@@ -394,26 +390,26 @@
                             Editar
                         </a>
 
-                        <a href="#" class="btn btn-danger">
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deletarAluno">
                             <i class="ti ti-trash"></i>
                             Deletar
-                        </a>
+                        </button>
                     </div>
                 </div>
 
                 <!--Modal para Salvar -->
-                <div class="modal fade" id="atualizarAluno" tabindex="-1" aria-labelledby="atualizarAluno" aria-hidden="true">
+                <div class="modal fade" id="deletarAluno" tabindex="-1" aria-labelledby="deletarAluno" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h6 class="modal-title fs-5" id="atualizarAlunoLabel"><strong>Atualizar Aluno</strong></h6>
+                                <h6 class="modal-title fs-5" id="deletarAlunoLabel"><strong>Deletar Aluno</strong></h6>
                             </div>
                             <div class="modal-body">
-                                Deseja salvar o nome Aluno?
+                                Deseja realmente excluir <strong>{{$aluno->nome}}</strong>?
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-                                <button type="submit" class="btn btn-primary">Salvar</button>
+                                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-danger">Deletar</button>
                             </div>
                         </div>
                     </div>
@@ -427,6 +423,5 @@
         </div>
     </div>
 </div>
-
 
 @endsection

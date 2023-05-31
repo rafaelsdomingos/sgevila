@@ -40,10 +40,25 @@ class AlunoController extends Controller
         ]);
     }
 
-    public function update(StoreUpdateAlunoFormRequest $request){
-        $data = $request->all();
-        dd($data);
-        //$aluno = Aluno::update($data);
-        //return redirect()->route('alunos.index');
+    public function update(StoreUpdateAlunoFormRequest $request, $id){
+
+        if(!$aluno = Aluno::find($id)){
+            return redirect()->route('alunos.index');
+        }
+
+        $aluno->update($request->all());
+        return redirect()->route('alunos.index');
+
+    }
+
+    public function destroy($id){
+
+        if(!$aluno = Aluno::find($id)){
+            return redirect()->route('alunos.index');
+        }
+        //dd($aluno);
+        $aluno->delete();
+        return redirect()->route('alunos.index');
+
     }
 }

@@ -5,7 +5,7 @@
 <div class="container-fluid">
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
-            <h5 class="card-title fw-semibold"></h5>
+            <h5 class="card-title fw-semibold">Atualização de Cadastro de Aluno</h5>
             <div>
                 <a href="{{route('alunos.index')}}" class="btn btn-primary">
                     <i class="ti ti-arrow-left"></i>
@@ -18,7 +18,8 @@
             <h5 class="card-title text-center my-3">DADOS PESSOAIS</h5>
             
                         
-            <form method="" action="#">
+            <form method="POST" action="{{route('alunos.update', $aluno->id)}}">
+                @method('PUT')
                 @csrf
                 <div class="row">
                     <div class="col-md-10 mb-3">
@@ -28,7 +29,7 @@
                     </div>
                     <div class="col-sm-2 mb-3">
                         <label class="form-label">Nascimento</label>
-                        <input class="form-control" name="nascimento" type="text" value="{{$aluno->nascimento}}" aria-label="" >
+                        <input class="form-control" name="nascimento" type="date" value="{{$aluno->nascimento}}" aria-label="" >
                     </div>
                 </div>
 
@@ -80,7 +81,7 @@
 
                     <div class="col-sm-2 mb-3">
                         <label class="form-label">CEP</label>
-                        <input class="form-control" name="cep" type="text" value="{{$aluno->cep}}" aria-label="" >
+                        <input class="form-control cep" name="cep" type="text" value="{{$aluno->cep}}" aria-label="" >
                     </div>
 
                     <div class="col-sm-1 mb-3">
@@ -91,11 +92,11 @@
 
                 <div class="row">
                     <div class="col-sm-3 mb-3">
-                        <label class="form-label">Contato 1</label>
-                        <input class="form-control telefone" name="fone1" type="text" value="{{$aluno->contato1}}" aria-label="" >
+                        <label class="form-label">Celular</label>
+                        <input class="form-control celular" name="fone1" type="text" value="{{$aluno->contato1}}" aria-label="" >
                     </div>
                     <div class="col-sm-3 mb-3">
-                        <label class="form-label">Contato 2</label>
+                        <label class="form-label">Telefone</label>
                         <input class="form-control telefone" name="fone2" type="text" value="{{$aluno->contato2}}" aria-label="" >
                     </div>
                     <div class="col-sm-6 mb-3">
@@ -206,7 +207,7 @@
 
                     <div class="col-sm-4 mb-3">
                         <label class="form-label">CPF</label>
-                        <input class="form-control" name="cpf" type="text" value="{{$aluno->cpf}}" aria-label="" >
+                        <input class="form-control cpf" name="cpf" type="text" value="{{$aluno->cpf}}" aria-label="" >
                     </div>
                 </div>
 
@@ -267,8 +268,8 @@
                     </div>
 
                     <div class="col-sm-3 mb-3">
-                        <label class="form-label">Fone</label>
-                        <input class="form-control" name="fone_contato1" type="text" value="{{$aluno->fone_contato1}}" aria-label="" >
+                        <label class="form-label">Celular</label>
+                        <input class="form-control celular" name="fone_contato1" type="text" value="{{$aluno->fone_contato1}}" aria-label="" >
                     </div>
 
                     <div class="col-sm-4 mb-3">
@@ -284,8 +285,8 @@
                     </div>
 
                     <div class="col-sm-3 mb-3">
-                        <label class="form-label">Fone</label>
-                        <input class="form-control" name="fone_contato2" type="text" value="{{$aluno->fone_contato2}}" aria-label="" >
+                        <label class="form-label">Celular</label>
+                        <input class="form-control celular" name="fone_contato2" type="text" value="{{$aluno->fone_contato2}}" aria-label="" >
                     </div>
 
                     <div class="col-sm-4 mb-3">
@@ -301,8 +302,8 @@
                     </div>
 
                     <div class="col-sm-3 mb-3">
-                        <label class="form-label">Fone</label>
-                        <input class="form-control" name="fone_contato3" type="text" value="{{$aluno->fone_contato3}}" aria-label="" >
+                        <label class="form-label">Celular</label>
+                        <input class="form-control celular" name="fone_contato3" type="text" value="{{$aluno->fone_contato3}}" aria-label="" >
                     </div>
 
                     <div class="col-sm-4 mb-3">
@@ -415,3 +416,16 @@
 
 
 @endsection
+
+
+@push('scripts')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.cpf').mask('000.000.000-00', {reverse: true});
+            $('.cep').mask('00000-000');
+            $('.telefone').mask('(00) 0000-0000');
+            $('.celular').mask('(00) 00000-0000');
+        });
+    </script>
+@endpush

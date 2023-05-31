@@ -21,6 +21,8 @@ use App\Http\Controllers\TurmaController;
 
 //Grupo de Rotas dos Alunos
 Route::prefix('alunos')->group(function(){
+    Route::put('/{aluno}', [ AlunoController::class, 'update'])->name('alunos.update');
+    Route::delete('/{aluno}', [ AlunoController::class, 'destroy'])->name('alunos.destroy');
     Route::get('/{aluno}/edit', [ AlunoController::class, 'edit'])->name('alunos.edit');
     Route::get('', [ AlunoController::class, 'index'])->name('alunos.index');
     Route::post('', [ AlunoController::class, 'store'])->name('alunos.store');

@@ -7,8 +7,8 @@
         <div class="card-header d-flex justify-content-between align-items-center">
             <h5 class="card-title fw-semibold">Cadastro de Alunos</h5>
             <div>
-                <a href="{{route('alunos.index')}}" class="btn btn-success">
-                    <i class="fas fa-arrow-left"></i>
+                <a href="{{route('alunos.index')}}" class="btn btn-primary">
+                    <i class="ti ti-arrow-left"></i>
                     Voltar
                 </a>
             </div>
@@ -374,12 +374,12 @@
                     <h5 class="card-title fw-semibold"></h5>
                     <div>
                         <button class="btn btn-warning" type="reset">
-                            <i class="fas fa-trash"></i>
+                            <i class="ti ti-arrow-left"></i>
                             Limpar
                         </button>
 
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#salvarAluno">
-                            <i class="fas fa-save"></i>
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#salvarAluno">
+                            <i class="ti ti-save"></i>
                             Salvar
                         </button>
                     </div>
@@ -390,14 +390,14 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h6 class="modal-title fs-5" id="salvarAlunoLabel"><strong>Salvar Aluno</strong></h6>
+                                <h6 class="modal-title fs-5" id="salvarAlunoLabel"><strong>Salvar novo Aluno</strong></h6>
                             </div>
                             <div class="modal-body">
-                                Deseja salvar o nome Aluno?
+                                Deseja salvar o novo Aluno?
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-                                <button type="submit" class="btn btn-primary">Salvar</button>
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="ti ti-cancel"></i>Cancelar</button>
+                                <button type="submit" class="btn btn-success"><i class="ti ti-save"></i>Salvar</button>
                             </div>
                         </div>
                     </div>
