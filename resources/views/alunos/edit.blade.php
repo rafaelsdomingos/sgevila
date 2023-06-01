@@ -18,18 +18,20 @@
             <h5 class="card-title text-center my-3">DADOS PESSOAIS</h5>
             
                         
-            <form method="POST" action="{{route('alunos.update', $aluno->id)}}">
+            <form method="POST" action="{{route('alunos.update', $aluno->id)}}" class="needs-validation" novalidate>
                 @method('PUT')
                 @csrf
                 <div class="row">
                     <div class="col-md-10 mb-3">
                         <label class="form-label">Nome Completo</label>
-                        <input class="form-control" name="nome" type="text" value="{{$aluno->nome}}" aria-label="" >
+                        <input class="form-control" name="nome" type="text" value="{{$aluno->nome}}" aria-label="" required>
+                        <div class="invalid-feedback">Você deve informar o nome do novo aluno.</div>
                       
                     </div>
                     <div class="col-sm-2 mb-3">
                         <label class="form-label">Nascimento</label>
                         <input class="form-control" name="nascimento" type="date" value="{{$aluno->nascimento}}" aria-label="" >
+                        <div class="invalid-feedback">Data inválida.</div>
                     </div>
                 </div>
 
@@ -44,10 +46,10 @@
                     </div>
                     <div class="col-sm-3 mb-3">
                         <label class="form-label">Sexo</label>
-                        <select class="form-select" aria-label="Sexo" name="sexo">
-                            <option selected></option>
-                            <option value="FEMININO">FEMININO</option>
-                            <option value="MASCULINO">MASCULINO</option>
+                        <select class="form-select" aria-label="Sexo" name="sexo" required>
+                            <option></option>
+                            <option value="FEMININO" {{$aluno->sexo == "FEMININO" ? 'selected' : ''}}>FEMININO</option>
+                            <option value="MASCULINO" {{$aluno->sexo == "MASCULINO" ? 'selected' : ''}}>MASCULINO</option>
                         </select>
                     </div>
                     <div class="col-sm-3 mb-3">
@@ -318,22 +320,22 @@
                 <div class="row">
                     <div class="col-sm-4 mb-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="1" name="comp_endereco" id="flexCheckComprovanteEndereco">
-                            <label class="form-check-label" for="flexCheckComprovanteEndereco">
+                            <input class="form-check-input" type="checkbox" value="{{$aluno->comp_endereco}}" name="comp_endereco" id="comp_endereco" {{$aluno->comp_endereco == 1 ? 'checked' : ''}}>
+                            <label class="form-check-label" for="comp_endereco">
                               COMPROVANTE DE ENDEREÇO (CÓPIA)
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="1" name="dec_matricula" id="flexCheckDeclaracaoMatricula">
-                            <label class="form-check-label" for="flexCheckDeclaracaoMatricula">
+                            <input class="form-check-input" type="checkbox" value="{{$aluno->dc_matricula}}" name="dec_matricula" id="dec_matricula" {{$aluno->dec_matricula == 1 ? 'checked' : ''}}>
+                            <label class="form-check-label" for="dec_matricula">
                               DECLARAÇÃO DE MATRÍCULA
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="1" name="atestado" id="flexCheckAtestadoMedico">
-                            <label class="form-check-label" for="flexCheckflexCheckAtestadoMedico">
+                            <input class="form-check-input" type="checkbox" value="{{$aluno->atestado}}" name="atestado" id="atestado" {{$aluno->atestado == 1 ? 'checked' : ''}}>
+                            <label class="form-check-label" for="atestado">
                               ATESTADO MÉDICO
                             </label>
                         </div>
@@ -342,14 +344,14 @@
 
                     <div class="col-sm-4 mb-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="1" name="renda" id="flexCheckComprovanteRenda">
-                            <label class="form-check-label" for="flexCheckComprovanteRenda">
+                            <input class="form-check-input" type="checkbox" value="{{$aluno->renda}}" name="renda" id="renda" {{$aluno->renda == 1 ? 'checked' : ''}}>
+                            <label class="form-check-label" for="renda">
                                 COMPROVANTE DE RENDA
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="1" name="certidao" id="flexCheckCertidaoNascimento">
-                            <label class="form-check-label" for="flexCheckCertidaoNascimento">
+                            <input class="form-check-input" type="checkbox" value="{{$aluno->certidao}}" name="certidao" id="certidao" {{$aluno->certidao == 1 ? 'checked' : ''}}>
+                            <label class="form-check-label" for="certidao">
                                 CERTIDÃO DE NASCIMENTO
                             </label>
                         </div>
@@ -357,14 +359,14 @@
 
                     <div class="col-sm-4 mb-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="1" name="foto" id="flexCheckFoto3x4">
-                            <label class="form-check-label" for="flexCheckFoto3x4">
+                            <input class="form-check-input" type="checkbox" value="{{$aluno->foto}}" name="foto" id="foto" {{$aluno->foto == 1 ? 'checked' : ''}}>
+                            <label class="form-check-label" for="foto">
                               FOTO 3X4
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="1" name="rg_responsavel" id="flexCheckRgResponsavel">
-                            <label class="form-check-label" for="flexCheckRgResponsavel">
+                            <input class="form-check-input" type="checkbox" value="{{$aluno->rg_responsavel}}" name="rg_responsavel" id="rg_responsavel" {{$aluno->rg_responsavel == 1 ? 'checked' : ''}}>
+                            <label class="form-check-label" for="rg_responsavel">
                               RG DO RESPONSÁVEL (CÓPIA)
                             </label>
                         </div>
@@ -375,14 +377,14 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <h5 class="card-title fw-semibold"></h5>
                     <div>
-                        <button class="btn btn-warning" type="reset">
-                            <i class="fas fa-trash"></i>
-                            Limpar
-                        </button>
+                        <a href="{{route('alunos.index')}}" class="btn btn-primary">
+                            <i class="ti ti-arrow-left"></i>
+                            Voltar
+                        </a>
 
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#atualizarAluno">
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#atualizarAluno">
                             <i class="fas fa-save"></i>
-                            Salvar
+                            Atualizar
                         </button>
                     </div>
                 </div>
@@ -399,7 +401,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-                                <button type="submit" class="btn btn-primary">Salvar</button>
+                                <button type="submit" class="btn btn-success">Atualizar</button>
                             </div>
                         </div>
                     </div>
@@ -419,13 +421,7 @@
 
 
 @push('scripts')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $('.cpf').mask('000.000.000-00', {reverse: true});
-            $('.cep').mask('00000-000');
-            $('.telefone').mask('(00) 0000-0000');
-            $('.celular').mask('(00) 00000-0000');
-        });
-    </script>
+    <script src="{{asset('js/jquery.mask.min.js')}}"></script>
+    <script src="{{asset('js/masks.js')}}"></script>
+    <script src="{{asset('js/form.validation.js')}}"></script>
 @endpush

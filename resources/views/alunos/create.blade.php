@@ -22,13 +22,13 @@
                 <div class="row">
                     <div class="col-md-10 mb-3">
                         <label class="form-label">Nome Completo</label>
-                        <input class="form-control" name="nome" type="text" value="" aria-label="" required>
+                        <input class="form-control" name="nome" type="text" value="" aria-label="Nome Completo" required>
                         <div class="invalid-feedback">Você deve informar o nome do novo aluno.</div>
                       
                     </div>
                     <div class="col-sm-2 mb-3">
                         <label class="form-label">Nascimento</label>
-                        <input class="form-control" name="nascimento" type="date" value="" aria-label="" required>
+                        <input class="form-control" name="nascimento" type="date" value="" aria-label="Nascimento" required>
                         <div class="invalid-feedback">Data inválida.</div>
                     </div>
                 </div>
@@ -36,11 +36,11 @@
                 <div class="row">
                     <div class="col-sm-3 mb-3">
                         <label class="form-label">Nacionalidade</label>
-                        <input class="form-control" name="nacionalidade" type="text" value="" aria-label="" >
+                        <input class="form-control" name="nacionalidade" type="text" value="" aria-label="Nacionalidade" >
                     </div>
                     <div class="col-sm-3 mb-3">
                         <label class="form-label">Naturalidade</label>
-                        <input class="form-control" name="naturalidade" type="text" value="" aria-label="" >
+                        <input class="form-control" name="naturalidade" type="text" value="" aria-label="Naturalidade" >
                     </div>
                     <div class="col-sm-3 mb-3">
                         <label class="form-label">Sexo</label>
@@ -53,56 +53,56 @@
                     </div>
                     <div class="col-sm-3 mb-3">
                         <label class="form-label">Cor / Raça</label>
-                        <input class="form-control" name="raca" type="text" value="" aria-label="" >
+                        <input class="form-control" name="raca" type="text" value="" aria-label="Cor / Raça" >
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-sm-12 mb-3">
                         <label class="form-label">Endereço</label>
-                        <input class="form-control" name="endereco" type="text" aria-label="" >
+                        <input class="form-control" name="endereco" type="text" aria-label="Endereço" >
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-sm-4 mb-3">
                         <label class="form-label">Bairro</label>
-                        <input class="form-control" name="bairro" type="text" aria-label="" >
+                        <input class="form-control" name="bairro" type="text" aria-label="Bairro" >
                     </div>
 
                     <div class="col-sm-4 mb-3">
                         <label class="form-label">Cidade</label>
-                        <input class="form-control" name="cidade" type="text" aria-label="" >
+                        <input class="form-control" name="cidade" type="text" aria-label="Cidade" >
                     </div>
 
                     <div class="col-sm-1 mb-3">
                         <label class="form-label">UF</label>
-                        <input class="form-control" name="uf" type="text" aria-label="" >
+                        <input class="form-control" name="uf" type="text" aria-label="UF" >
                     </div>
 
                     <div class="col-sm-2 mb-3">
                         <label class="form-label">CEP</label>
-                        <input class="form-control cep" name="cep" type="text" aria-label="" >
+                        <input class="form-control cep" name="cep" type="text" aria-label="CEP" >
                     </div>
 
                     <div class="col-sm-1 mb-3">
                         <label class="form-label">SER</label>
-                        <input class="form-control" name="regional" type="text" aria-label="" >
+                        <input class="form-control" name="regional" type="text" aria-label="SER" >
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-sm-3 mb-3">
                         <label class="form-label">Celular</label>
-                        <input class="form-control celular" name="fone1" type="text" aria-label="" >
+                        <input class="form-control celular" name="fone1" type="text" aria-label="Celular" >
                     </div>
                     <div class="col-sm-3 mb-3">
                         <label class="form-label">Telefone</label>
-                        <input class="form-control telefone" name="fone2" type="text" aria-label="" >
+                        <input class="form-control telefone" name="fone2" type="text" aria-label="Telefone" >
                     </div>
                     <div class="col-sm-6 mb-3">
                         <label class="form-label">Email</label>
-                        <input class="form-control" name="email" type="email" aria-label="" >
+                        <input class="form-control" name="email" type="email" aria-label="Email" >
                     </div>
                 </div>
 
@@ -110,15 +110,15 @@
                     <div class="col-sm-12 mb-3">
                         <label class="form-label">Possui alguma necessidade especial?</label><br>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="deficiencia" id="inlineRadio1" value="1">
-                                <label class="form-check-label" for="inlineRadio1">SIM</label>
+                                <input class="form-check-input" type="radio" name="deficiencia" id="defRadio1" value="1">
+                                <label class="form-check-label" for="defRadio1">SIM</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="deficiencia" id="inlineRadio2" value="0">
-                                <label class="form-check-label" for="inlineRadio2">NÃO</label>
+                                <input class="form-check-input" type="radio" name="deficiencia" id="defRadio2" value="0">
+                                <label class="form-check-label" for="defRadio2">NÃO</label>
                             </div>
                             <br><br><label class="form-label">Se sim, qual seria?</strong></label>
-                            <input class="form-control" name="tipo_deficiencia" type="text" aria-label="" >
+                            <input class="form-control" name="tipo_deficiencia" type="text" aria-label="Se sim, qual seria?" >
                     </div>
                 </div>
 
@@ -134,7 +134,7 @@
                             <label class="form-check-label" for="inlineRadio22">NÃO</label>
                         </div>
                         <br><br><label class="form-label">Se sim, qual seria?</label>
-                        <input class="form-control" name="tipo_arlegia" type="text" aria-label="" >
+                        <input class="form-control" name="tipo_arlegia" type="text" aria-label="Se sim, qual seria?" >
                     </div>
                 </div>
 
@@ -144,8 +144,8 @@
                 <div class="row">
                     <div class="col-sm-6 mb-3">
                         <label class="form-label">Escolaridade</label>
-                        <select class="form-select" name="escolaridade">
-                            <option selected></option>
+                        <select class="form-select" name="escolaridade" required>
+                            <option></option>
                             <option value="ENSINO FUNDAMENTAL INCOMPLETO">ENSINO FUNDAMENTAL INCOMPLETO</option>
                             <option value="ENSINO FUNDAMENTAL">ENSINO FUNDAMENTAL</option>
                             <option value="ENSINO MÉDIO INCOMPLETO">ENSINO MÉDIO INCOMPLETO</option>
@@ -153,17 +153,18 @@
                             <option value="ENSINO SUPERIOR INCOMPLETO">ENSINO SUPERIOR INCOMPLETO</option>
                             <option value="ENSINO SUPERIOR">ENSINO SUPERIOR</option>
                         </select>
+                        <div class="invalid-feedback">Você deve informar a escolaridade</div>
                     </div>
 
                     <div class="col-sm-3 mb-3">
                         <label class="form-label">Série</label>
-                        <input class="form-control" name="serie" type="text" aria-label="" >
+                        <input class="form-control" name="serie" type="text" aria-label="Série" >
                     </div>
 
                     <div class="col-sm-3 mb-3">
                         <label class="form-label">Turno</label>
                         <select class="form-select" name="turno">
-                            <option selected></option>
+                            <option ></option>
                             <option value="MANHÃ">MANHÃ</option>
                             <option value="TARDE">TARDE</option>
                             <option value="NOITE">NOITE</option>
@@ -174,13 +175,13 @@
                 <div class="row">
                     <div class="col-sm-9 mb-3">
                         <label class="form-label">Instituição de Ensino</label>
-                        <input class="form-control" name="instituicao" type="text" aria-label="" >
+                        <input class="form-control" name="instituicao" type="text" aria-label="Instituição de Ensino" >
                     </div>
 
                     <div class="col-sm-3 mb-3">
                         <label class="form-label">Tipo de Instituição de Ensino</label>
                         <select class="form-select" name="tipo_instituicao">
-                            <option selected></option>
+                            <option></option>
                             <option value="PÚBLICA">PÚBLICA</option>
                             <option value="PRIVADA">PRIVADA</option>
                         </select>
@@ -193,22 +194,22 @@
                 <div class="row">
                     <div class="col-sm-4 mb-3">
                         <label class="form-label">RG</label>
-                        <input class="form-control" name="rg" type="text" aria-label="" >
+                        <input class="form-control" name="rg" type="text" aria-label="RG" >
                     </div>
 
                     <div class="col-sm-2 mb-3">
                         <label class="form-label">Emissor</label>
-                        <input class="form-control" name="emissor" type="text" aria-label="" >
+                        <input class="form-control" name="emissor" type="text" aria-label="Emissor" >
                     </div>
 
                     <div class="col-sm-1 mb-3">
                         <label class="form-label">UF</label>
-                        <input class="form-control" name="uf_emissor" type="text" aria-label="" >
+                        <input class="form-control" name="uf_emissor" type="text" aria-label="UF" >
                     </div>
 
                     <div class="col-sm-5 mb-3">
                         <label class="form-label">CPF</label>
-                        <input class="form-control" id="cpf" name="cpf" type="text" aria-label="" >
+                        <input class="form-control" id="cpf" name="cpf" type="text" aria-label="CPF" >
                     </div>
                 </div>
 
@@ -218,44 +219,44 @@
                 <div class="row">
                     <div class="col-sm-6 mb-3">
                         <label class="form-label">Nome da Mãe</label>
-                        <input class="form-control" name="mae" type="text" aria-label="" >
+                        <input class="form-control" name="mae" type="text" aria-label="Nome da Mãe" >
                     </div>
 
                     <div class="col-sm-3 mb-3">
                         <label class="form-label">RG da Mãe</label>
-                        <input class="form-control" name="rgmae" type="text" aria-label="" >
+                        <input class="form-control" name="rgmae" type="text" aria-label="RG da Mãe" >
                     </div>
 
                     <div class="col-sm-2 mb-3">
                         <label class="form-label">Emissor</label>
-                        <input class="form-control" name="emissor_rg_mae" type="text" aria-label="" >
+                        <input class="form-control" name="emissor_rg_mae" type="text" aria-label="Emissor" >
                     </div>
 
                     <div class="col-sm-1 mb-3">
                         <label class="form-label">UF</label>
-                        <input class="form-control" name="uf_rg_mae" type="text" aria-label="" >
+                        <input class="form-control" name="uf_rg_mae" type="text" aria-label="UF" >
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-sm-6 mb-3">
                         <label class="form-label">Nome do Pai</label>
-                        <input class="form-control" name="pai" type="text" aria-label="" >
+                        <input class="form-control" name="pai" type="text" aria-label="Nome do Pai" >
                     </div>
 
                     <div class="col-sm-3 mb-3">
                         <label class="form-label">RG do Pai</label>
-                        <input class="form-control" name="rgpai" type="text" aria-label="" >
+                        <input class="form-control" name="rgpai" type="text" aria-label="RG do Pai" >
                     </div>
 
                     <div class="col-sm-2 mb-3">
                         <label class="form-label">Emissor</label>
-                        <input class="form-control" name="emissor_rg_pai" type="text" aria-label="" >
+                        <input class="form-control" name="emissor_rg_pai" type="text" aria-label="Emissor" >
                     </div>
 
                     <div class="col-sm-1 mb-3">
                         <label class="form-label">UF</label>
-                        <input class="form-control" name="uf_rg_pai" type="text" aria-label="" >
+                        <input class="form-control" name="uf_rg_pai" type="text" aria-label="UF" >
                     </div>
                 </div>
 
@@ -265,51 +266,51 @@
                 <div class="row">
                     <div class="col-sm-5 mb-3">
                         <label class="form-label">Nome Contato 1</strong></label>
-                        <input class="form-control" name="nome_contato1" type="text" aria-label="" >
+                        <input class="form-control" name="nome_contato1" type="text" aria-label="Nome Contato 1" >
                     </div>
 
                     <div class="col-sm-3 mb-3">
                         <label class="form-label">Celular</label>
-                        <input class="form-control" name="fone_contato1" type="text" aria-label="" >
+                        <input class="form-control" name="fone_contato1" type="text" aria-label="Celular" >
                     </div>
 
                     <div class="col-sm-4 mb-3">
                         <label class="form-label">Email</label>
-                        <input class="form-control" name="email_contato1" type="text" aria-label="" >
+                        <input class="form-control" name="email_contato1" type="text" aria-label="Email" >
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-sm-5 mb-3">
                         <label class="form-label">Nome Contato 2</label>
-                        <input class="form-control" name="nome_contato2" type="text" aria-label="" >
+                        <input class="form-control" name="nome_contato2" type="text" aria-label="Nome Contato 2" >
                     </div>
 
                     <div class="col-sm-3 mb-3">
                         <label class="form-label">Celular</label>
-                        <input class="form-control" name="fone_contato2" type="text" aria-label="" >
+                        <input class="form-control" name="fone_contato2" type="text" aria-label="Celular" >
                     </div>
 
                     <div class="col-sm-4 mb-3">
                         <label class="form-label">Email</label>
-                        <input class="form-control" name="email_contato2" type="text" aria-label="" >
+                        <input class="form-control" name="email_contato2" type="text" aria-label="Email" >
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-sm-5 mb-3">
                         <label class="form-label">Nome Contato 3</label>
-                        <input class="form-control" name="nome_contato3" type="text" aria-label="" >
+                        <input class="form-control" name="nome_contato3" type="text" aria-label="Nome Contato 3" >
                     </div>
 
                     <div class="col-sm-3 mb-3">
                         <label class="form-label">Celular</label>
-                        <input class="form-control" name="fone_contato3" type="text" aria-label="" >
+                        <input class="form-control" name="fone_contato3" type="text" aria-label="Celular" >
                     </div>
 
                     <div class="col-sm-4 mb-3">
                         <label class="form-label">Email</label>
-                        <input class="form-control" name="email_contato3" type="text" aria-label="" >
+                        <input class="form-control" name="email_contato3" type="text" aria-label="Email" >
                     </div>
                 </div>
 
@@ -319,22 +320,22 @@
                 <div class="row">
                     <div class="col-sm-4 mb-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="1" name="comp_endereco" id="flexCheckComprovanteEndereco">
-                            <label class="form-check-label" for="flexCheckComprovanteEndereco">
+                            <input class="form-check-input" type="checkbox" value="1" name="comp_endereco" id="comp_endereco">
+                            <label class="form-check-label" for="comp_endereco">
                               COMPROVANTE DE ENDEREÇO (CÓPIA)
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="1" name="dec_matricula" id="flexCheckDeclaracaoMatricula">
-                            <label class="form-check-label" for="flexCheckDeclaracaoMatricula">
+                            <input class="form-check-input" type="checkbox" value="1" name="dec_matricula" id="dec_matricula">
+                            <label class="form-check-label" for="dec_matricula">
                               DECLARAÇÃO DE MATRÍCULA
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="1" name="atestado" id="flexCheckAtestadoMedico">
-                            <label class="form-check-label" for="flexCheckflexCheckAtestadoMedico">
+                            <input class="form-check-input" type="checkbox" value="1" name="atestado" id="atestado">
+                            <label class="form-check-label" for="atestado">
                               ATESTADO MÉDICO
                             </label>
                         </div>
@@ -343,14 +344,14 @@
 
                     <div class="col-sm-4 mb-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="1" name="renda" id="flexCheckComprovanteRenda">
-                            <label class="form-check-label" for="flexCheckComprovanteRenda">
+                            <input class="form-check-input" type="checkbox" value="1" name="renda" id="renda">
+                            <label class="form-check-label" for="renda">
                                 COMPROVANTE DE RENDA
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="1" name="certidao" id="flexCheckCertidaoNascimento">
-                            <label class="form-check-label" for="flexCheckCertidaoNascimento">
+                            <input class="form-check-input" type="checkbox" value="1" name="certidao" id="certidao">
+                            <label class="form-check-label" for="certidao">
                                 CERTIDÃO DE NASCIMENTO
                             </label>
                         </div>
@@ -358,14 +359,14 @@
 
                     <div class="col-sm-4 mb-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="1" name="foto" id="flexCheckFoto3x4">
-                            <label class="form-check-label" for="flexCheckFoto3x4">
+                            <input class="form-check-input" type="checkbox" value="1" name="foto" id="foto">
+                            <label class="form-check-label" for="foto">
                               FOTO 3X4
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="1" name="rg_responsavel" id="flexCheckRgResponsavel">
-                            <label class="form-check-label" for="flexCheckRgResponsavel">
+                            <input class="form-check-input" type="checkbox" value="1" name="rg_responsavel" id="rg_responsavel">
+                            <label class="form-check-label" for="rg_responsavel">
                               RG DO RESPONSÁVEL (CÓPIA)
                             </label>
                         </div>
@@ -425,33 +426,7 @@
 @endsection
 
 @push('scripts')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $('.cpf').mask('000.000.000-00', {reverse: true});
-            $('.cep').mask('00000-000');
-            $('.telefone').mask('(00) 0000-0000');
-            $('.celular').mask('(00) 00000-0000');
-        });
-    </script>
-    <script>
-        (() => {
-            'use strict'
-
-            // Fetch all the forms we want to apply custom Bootstrap validation styles to
-            const forms = document.querySelectorAll('.needs-validation')
-
-            // Loop over them and prevent submission
-            Array.from(forms).forEach(form => {
-                form.addEventListener('submit', event => {
-                if (!form.checkValidity()) {
-                    event.preventDefault()
-                    event.stopPropagation()
-                }
-
-                form.classList.add('was-validated')
-                }, false)
-            })
-            })()
-    </script>
+    <script src="{{asset('js/jquery.mask.min.js')}}"></script>
+    <script src="{{asset('js/masks.js')}}"></script>
+    <script src="{{asset('js/form.validation.js')}}"></script>
 @endpush

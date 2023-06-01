@@ -74,7 +74,7 @@ class StoreUpdateAlunoFormRequest extends FormRequest
             'dec_matricula' => 'nullable|boolean',
             'atestado' => 'nullable|boolean',
             'renda' => 'nullable|boolean',
-            'certidao' => 'nullable|booelan',
+            'certidao' => 'nullable|boolean',
             'rg_responsavel' => 'nullable|boolean',
             'foto' => 'nullable|boolean',
         ];
