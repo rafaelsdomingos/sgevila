@@ -17,17 +17,19 @@
 
             <h5 class="card-title text-center my-3">DADOS PESSOAIS</h5>           
                         
-            <form method="POST" action="{{route('alunos.store')}}">
+            <form method="POST" action="{{route('alunos.store')}}" class="needs-validation" novalidate>
                 @csrf
                 <div class="row">
                     <div class="col-md-10 mb-3">
                         <label class="form-label">Nome Completo</label>
-                        <input class="form-control" name="nome" type="text" value="" aria-label="" >
+                        <input class="form-control" name="nome" type="text" value="" aria-label="" required>
+                        <div class="invalid-feedback">Você deve informar o nome do novo aluno.</div>
                       
                     </div>
                     <div class="col-sm-2 mb-3">
                         <label class="form-label">Nascimento</label>
-                        <input class="form-control" name="nascimento" type="date" value="" aria-label="" >
+                        <input class="form-control" name="nascimento" type="date" value="" aria-label="" required>
+                        <div class="invalid-feedback">Data inválida.</div>
                     </div>
                 </div>
 
@@ -42,11 +44,12 @@
                     </div>
                     <div class="col-sm-3 mb-3">
                         <label class="form-label">Sexo</label>
-                        <select class="form-select" aria-label="Sexo" name="sexo">
-                            <option selected></option>
+                        <select class="form-select" aria-label="Sexo" name="sexo" required>
+                            <option ></option>
                             <option value="FEMININO">FEMININO</option>
                             <option value="MASCULINO">MASCULINO</option>
                         </select>
+                        <div class="invalid-feedback">O sexo deve ser informado.</div>
                     </div>
                     <div class="col-sm-3 mb-3">
                         <label class="form-label">Cor / Raça</label>
@@ -377,11 +380,17 @@
                             <i class="ti ti-arrow-left"></i>
                             Limpar
                         </button>
+                        <button type="submit" class="btn btn-success">
+                            <i class="ti ti-plus"></i>Salvar
+                        </button>
 
+                        <!--
                         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#salvarAluno">
                             <i class="ti ti-save"></i>
                             Salvar
                         </button>
+                        -->
+
                     </div>
                 </div>
 
@@ -424,5 +433,25 @@
             $('.telefone').mask('(00) 0000-0000');
             $('.celular').mask('(00) 00000-0000');
         });
+    </script>
+    <script>
+        (() => {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+
+                form.classList.add('was-validated')
+                }, false)
+            })
+            })()
     </script>
 @endpush
