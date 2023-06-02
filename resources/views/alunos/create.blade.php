@@ -134,7 +134,7 @@
                             <label class="form-check-label" for="inlineRadio22">NÃO</label>
                         </div>
                         <br><br><label class="form-label">Se sim, qual seria?</label>
-                        <input class="form-control" name="tipo_arlegia" type="text" aria-label="Se sim, qual seria?" >
+                        <input class="form-control" name="tipo_alergia" type="text" aria-label="Se sim, qual seria?" >
                     </div>
                 </div>
 

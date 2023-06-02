@@ -111,15 +111,15 @@
                     <div class="col-sm-12 mb-3">
                         <label class="form-label">Possui alguma necessidade especial?</label><br>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="deficiencia" id="inlineRadio1" value="1">
+                                <input class="form-check-input" type="radio" name="deficiencia" id="inlineRadio1" value="1" {{$aluno->deficiencia == 1 ? 'checked' : ''}}>
                                 <label class="form-check-label" for="inlineRadio1">SIM</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="deficiencia" id="inlineRadio2" value="0">
+                                <input class="form-check-input" type="radio" name="deficiencia" id="inlineRadio2" value="0" {{$aluno->deficiencia == 0 ? 'checked' : ''}}>
                                 <label class="form-check-label" for="inlineRadio2">NÃO</label>
                             </div>
                             <br><br><label class="form-label">Se sim, qual seria?</strong></label>
-                            <input class="form-control" name="tipo_deficiencia" type="text" aria-label="" >
+                            <input class="form-control" name="tipo_deficiencia" type="text" value="{{$aluno->tipo_deficiencia}}" aria-label="Tipo de Necessidade" >
                     </div>
                 </div>
 
@@ -127,15 +127,15 @@
                     <div class="col-sm-12 mb-3">
                         <label class="form-label">Possui alguma alergia?</label><br>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="alergia" id="inlineRadio12" value="1">
+                            <input class="form-check-input" type="radio" name="alergia" id="inlineRadio12" value="1" {{$aluno->alergia == 1 ? 'checked' : ''}}>
                             <label class="form-check-label" for="inlineRadio12">SIM</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="alergia" id="inlineRadio22" value="0">
+                            <input class="form-check-input" type="radio" name="alergia" id="inlineRadio22" value="0" {{$aluno->alergia == 0 ? 'checked' : ''}}>
                             <label class="form-check-label" for="inlineRadio22">NÃO</label>
                         </div>
                         <br><br><label class="form-label">Se sim, qual seria?</label>
-                        <input class="form-control" name="tipo_arlegia" type="text" aria-label="" >
+                        <input class="form-control" name="tipo_alergia" type="text" value="{{$aluno->tipo_alergia}}" aria-label="Tipo de Alergia" >
                     </div>
                 </div>
 
@@ -320,21 +320,25 @@
                 <div class="row">
                     <div class="col-sm-4 mb-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="{{$aluno->comp_endereco}}" name="comp_endereco" id="comp_endereco" {{$aluno->comp_endereco == 1 ? 'checked' : ''}}>
+                            <input type="hidden" name="comp_endereco" value="0">
+                            <input class="form-check-input" type="checkbox" value="1" name="comp_endereco" id="comp_endereco" {{$aluno->comp_endereco || old('comp_endereco', 0 ) === 1 ? 'checked' : ''}}>
+                            
                             <label class="form-check-label" for="comp_endereco">
                               COMPROVANTE DE ENDEREÇO (CÓPIA)
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="{{$aluno->dc_matricula}}" name="dec_matricula" id="dec_matricula" {{$aluno->dec_matricula == 1 ? 'checked' : ''}}>
+                            <input type="hidden" name="dec_matricula" value="0">
+                            <input class="form-check-input" type="checkbox" value="1" name="dec_matricula" id="dec_matricula" {{$aluno->dec_matricula || old('dec_matricula', 0 ) === 1 ? 'checked' : ''}}>
                             <label class="form-check-label" for="dec_matricula">
                               DECLARAÇÃO DE MATRÍCULA
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="{{$aluno->atestado}}" name="atestado" id="atestado" {{$aluno->atestado == 1 ? 'checked' : ''}}>
+                            <input type="hidden" name="atestado" value="0">
+                            <input class="form-check-input" type="checkbox" value="1" name="atestado" id="atestado" {{$aluno->atestado || old('atestado', 0 ) === 1 ? 'checked' : ''}}>
                             <label class="form-check-label" for="atestado">
                               ATESTADO MÉDICO
                             </label>
@@ -344,13 +348,15 @@
 
                     <div class="col-sm-4 mb-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="{{$aluno->renda}}" name="renda" id="renda" {{$aluno->renda == 1 ? 'checked' : ''}}>
+                            <input type="hidden" name="renda" value="0">
+                            <input class="form-check-input" type="checkbox" value="1" name="renda" id="renda" {{$aluno->renda || old('renda', 0 ) === 1 ? 'checked' : ''}}>
                             <label class="form-check-label" for="renda">
                                 COMPROVANTE DE RENDA
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="{{$aluno->certidao}}" name="certidao" id="certidao" {{$aluno->certidao == 1 ? 'checked' : ''}}>
+                            <input type="hidden" name="certidao" value="0">
+                            <input class="form-check-input" type="checkbox" value="1" name="certidao" id="certidao" {{$aluno->certidao || old('certidao', 0 ) === 1 ? 'checked' : ''}}>
                             <label class="form-check-label" for="certidao">
                                 CERTIDÃO DE NASCIMENTO
                             </label>
@@ -359,13 +365,15 @@
 
                     <div class="col-sm-4 mb-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="{{$aluno->foto}}" name="foto" id="foto" {{$aluno->foto == 1 ? 'checked' : ''}}>
+                            <input type="hidden" name="foto" value="0">
+                            <input class="form-check-input" type="checkbox" value="1" name="foto" id="foto" {{$aluno->foto || old('foto', 0 ) === 1 ? 'checked' : ''}}>
                             <label class="form-check-label" for="foto">
                               FOTO 3X4
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="{{$aluno->rg_responsavel}}" name="rg_responsavel" id="rg_responsavel" {{$aluno->rg_responsavel == 1 ? 'checked' : ''}}>
+                            <input type="hidden" name="rg_responsavel" value="0">
+                            <input class="form-check-input" type="checkbox" value="1" name="rg_responsavel" id="rg_responsavel" {{$aluno->rg_responsavel  || old('rg_responsavel', 0 ) === 1 ? 'checked' : ''}}>
                             <label class="form-check-label" for="rg_responsavel">
                               RG DO RESPONSÁVEL (CÓPIA)
                             </label>

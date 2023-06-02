@@ -130,15 +130,15 @@
                     <div class="col-sm-12 mb-3">
                         <label class="form-label">Possui alguma alergia?</label><br>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="alergia" id="alergiaRadio1" value="1" {{$aluno->alergia == 1 ? 'checked' : ''}}>
+                            <input class="form-check-input" type="radio" name="alergia" id="alergiaRadio1" value="1" {{$aluno->alergia == 1 ? 'checked' : ''}} disabled>
                             <label class="form-check-label" for="alergiaRadio1">SIM</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="alergia" id="alergiaRadio2" value="0" {{$aluno->alergia == 0 ? 'checked' : ''}}>
+                            <input class="form-check-input" type="radio" name="alergia" id="alergiaRadio2" value="0" {{$aluno->alergia == 0 ? 'checked' : ''}} disabled>
                             <label class="form-check-label" for="alergiaRadio2">NÃO</label>
                         </div>
                         <br><br><label class="form-label">Se sim, qual seria?</label>
-                        <input class="form-control" name="tipo_arlegia" type="text" aria-label="" value="{{$aluno->tipo_alergia}}" disabled>
+                        <input class="form-control" name="tipo_alergia" type="text" aria-label="" value="{{$aluno->tipo_alergia}}" disabled>
                     </div>
                 </div>
 
