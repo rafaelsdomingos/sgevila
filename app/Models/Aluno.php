@@ -30,7 +30,7 @@ class Aluno extends Model
         'tipo_deficiencia',
         'alergia',
         'tipo_alergia',
-        'ecolaridade',
+        'escolaridade',
         'serie',
         'turno',
         'instituicao',

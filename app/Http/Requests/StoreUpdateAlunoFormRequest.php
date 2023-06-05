@@ -42,7 +42,7 @@ class StoreUpdateAlunoFormRequest extends FormRequest
             'tipo_deficiencia' => 'nullable|string',
             'alergia' => 'nullable|boolean',
             'tipo_alergia' => 'nullable|string',
-            'ecolaridade' => 'nullable|string',
+            'escolaridade' => 'nullable|string',
             'serie' => 'nullable|string',
             'turno' => 'nullable|string',
             'instituicao' => 'nullable|string',

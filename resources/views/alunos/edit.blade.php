@@ -95,11 +95,11 @@
                 <div class="row">
                     <div class="col-sm-3 mb-3">
                         <label class="form-label">Celular</label>
-                        <input class="form-control celular" name="fone1" type="text" value="{{$aluno->contato1}}" aria-label="" >
+                        <input class="form-control celular" name="fone1" type="text" value="{{$aluno->fone1}}" aria-label="" >
                     </div>
                     <div class="col-sm-3 mb-3">
                         <label class="form-label">Telefone</label>
-                        <input class="form-control telefone" name="fone2" type="text" value="{{$aluno->contato2}}" aria-label="" >
+                        <input class="form-control telefone" name="fone2" type="text" value="{{$aluno->fone2}}" aria-label="" >
                     </div>
                     <div class="col-sm-6 mb-3">
                         <label class="form-label">Email</label>
@@ -145,15 +145,18 @@
                 <div class="row">
                     <div class="col-sm-6 mb-3">
                         <label class="form-label">Escolaridade</label>
+
                         <select class="form-select" name="escolaridade">
-                            <option selected></option>
-                            <option value="ENSINO FUNDAMENTAL INCOMPLETO">ENSINO FUNDAMENTAL INCOMPLETO</option>
-                            <option value="ENSINO FUNDAMENTAL">ENSINO FUNDAMENTAL</option>
-                            <option value="ENSINO MÉDIO INCOMPLETO">ENSINO MÉDIO INCOMPLETO</option>
-                            <option value="ENSINO MÉDIO">ENSINO MÉDIO</option>
-                            <option value="ENSINO SUPERIOR INCOMPLETO">ENSINO SUPERIOR INCOMPLETO</option>
-                            <option value="ENSINO SUPERIOR">ENSINO SUPERIOR</option>
+                            <option ></option>
+                            <option value="ENSINO FUNDAMENTAL INCOMPLETO" {{$aluno->escolaridade === "ENSINO FUNDAMENTAL INCOMPLETO" ? 'selected' : ''}}>ENSINO FUNDAMENTAL INCOMPLETO</option>
+                            <option value="ENSINO FUNDAMENTAL" {{$aluno->escolaridade === "ENSINO FUNDAMENTAL" ? 'selected' : ''}}>ENSINO FUNDAMENTAL</option>
+                            <option value="ENSINO MÉDIO INCOMPLETO" {{$aluno->escolaridade === "ENSINO MÉDIO INCOMPLETO" ? 'selected' : ''}}>ENSINO MÉDIO INCOMPLETO</option>
+                            <option value="ENSINO MÉDIO" {{$aluno->escolaridade === "ENSINO MÉDIO" ? 'selected' : ''}}>ENSINO MÉDIO</option>
+                            <option value="ENSINO SUPERIOR INCOMPLETO" {{$aluno->escolaridade === "ENSINO SUPERIOR INCOMPLETO" ? 'selected' : ''}}>ENSINO SUPERIOR INCOMPLETO</option>
+                            <option value="ENSINO SUPERIOR" {{$aluno->escolaridade === "ENSINO SUPERIOR" ? 'selected' : ''}}>ENSINO SUPERIOR</option>
                         </select>
+
+
                     </div>
 
                     <div class="col-sm-3 mb-3">
@@ -165,9 +168,9 @@
                         <label class="form-label">Turno</label>
                         <select class="form-select" name="turno">
                             <option selected></option>
-                            <option value="MANHÃ">MANHÃ</option>
-                            <option value="TARDE">TARDE</option>
-                            <option value="NOITE">NOITE</option>
+                            <option value="MANHÃ" {{$aluno->turno == "MANHÃ" ? 'selected' : ''}}>MANHÃ</option>
+                            <option value="TARDE" {{$aluno->turno == "TARDE" ? 'selected' : ''}}>TARDE</option>
+                            <option value="NOITE" {{$aluno->turno == "NOITE" ? 'selected' : ''}}>NOITE</option>
                         </select>
                     </div>
                 </div>
@@ -182,8 +185,8 @@
                         <label class="form-label">Tipo de Instituição de Ensino</label>
                         <select class="form-select" name="tipo_instituicao">
                             <option selected></option>
-                            <option value="PÚBLICA">PÚBLICA</option>
-                            <option value="PRIVADA">PRIVADA</option>
+                            <option value="PÚBLICA" {{$aluno->tipo_instituicao == "PÚBLICA" ? 'selected' : ''}}>PÚBLICA</option>
+                            <option value="PRIVADA" {{$aluno->tipo_instituicao == "PRIVADA" ? 'selected' : ''}}>PRIVADA</option>
                         </select>
                     </div>
                 </div>
@@ -197,17 +200,17 @@
                         <input class="form-control" name="rg" type="text" value="{{$aluno->rg}}" aria-label="" >
                     </div>
 
-                    <div class="col-sm-4 mb-3">
+                    <div class="col-sm-2 mb-3">
                         <label class="form-label">Emissor</label>
                         <input class="form-control" name="emissor" type="text" value="{{$aluno->emissor}}" aria-label="" >
                     </div>
 
-                    <div class="col-sm-4 mb-3">
+                    <div class="col-sm-1 mb-3">
                         <label class="form-label">UF</label>
                         <input class="form-control" name="uf_emissor" type="text" value="{{$aluno->uf_emissor}}" aria-label="" >
                     </div>
 
-                    <div class="col-sm-4 mb-3">
+                    <div class="col-sm-5 mb-3">
                         <label class="form-label">CPF</label>
                         <input class="form-control cpf" name="cpf" type="text" value="{{$aluno->cpf}}" aria-label="" >
                     </div>
@@ -300,7 +303,7 @@
                 <div class="row">
                     <div class="col-sm-5 mb-3">
                         <label class="form-label">Nome Contato 3</label>
-                        <input class="form-control" name="nome_contato3" type="text" value="{{$aluno->nome_contao3}}" aria-label="" >
+                        <input class="form-control" name="nome_contato3" type="text" value="{{$aluno->nome_contato3}}" aria-label="" >
                     </div>
 
                     <div class="col-sm-3 mb-3">

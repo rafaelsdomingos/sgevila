@@ -209,7 +209,7 @@
 
                     <div class="col-sm-5 mb-3">
                         <label class="form-label">CPF</label>
-                        <input class="form-control" id="cpf" name="cpf" type="text" aria-label="CPF" >
+                        <input class="form-control cpf" name="cpf" type="text" aria-label="CPF" >
                     </div>
                 </div>
 
@@ -271,7 +271,7 @@
 
                     <div class="col-sm-3 mb-3">
                         <label class="form-label">Celular</label>
-                        <input class="form-control" name="fone_contato1" type="text" aria-label="Celular" >
+                        <input class="form-control celular" name="fone_contato1" type="text" aria-label="Celular" >
                     </div>
 
                     <div class="col-sm-4 mb-3">
@@ -288,7 +288,7 @@
 
                     <div class="col-sm-3 mb-3">
                         <label class="form-label">Celular</label>
-                        <input class="form-control" name="fone_contato2" type="text" aria-label="Celular" >
+                        <input class="form-control celular" name="fone_contato2" type="text" aria-label="Celular" >
                     </div>
 
                     <div class="col-sm-4 mb-3">
@@ -305,7 +305,7 @@
 
                     <div class="col-sm-3 mb-3">
                         <label class="form-label">Celular</label>
-                        <input class="form-control" name="fone_contato3" type="text" aria-label="Celular" >
+                        <input class="form-control celular" name="fone_contato3" type="text" aria-label="Celular" >
                     </div>
 
                     <div class="col-sm-4 mb-3">

@@ -98,11 +98,11 @@
                 <div class="row">
                     <div class="col-sm-3 mb-3">
                         <label class="form-label">Contato 1</label>
-                        <input class="form-control telefone" name="fone1" type="text" value="{{$aluno->contato1}}" aria-label="" disabled>
+                        <input class="form-control telefone" name="fone1" type="text" value="{{$aluno->fone1}}" aria-label="" disabled>
                     </div>
                     <div class="col-sm-3 mb-3">
                         <label class="form-label">Contato 2</label>
-                        <input class="form-control telefone" name="fone2" type="text" value="{{$aluno->contato2}}" aria-label="" disabled>
+                        <input class="form-control telefone" name="fone2" type="text" value="{{$aluno->fone2}}" aria-label="" disabled>
                     </div>
                     <div class="col-sm-6 mb-3">
                         <label class="form-label">Email</label>
@@ -148,15 +148,19 @@
                 <div class="row">
                     <div class="col-sm-6 mb-3">
                         <label class="form-label">Escolaridade</label>
-                        <select class="form-select" name="escolaridade" required disabled>
+                        
+                        
+                        <select class="form-select" name="escolaridade" disabled>
                             <option ></option>
-                            <option value="ENSINO FUNDAMENTAL INCOMPLETO" {{$aluno->escolaridade == "ENSINO FUNDAMENTAL INCOMPLETO" ? 'selected' : ''}}>ENSINO FUNDAMENTAL INCOMPLETO</option>
-                            <option value="ENSINO FUNDAMENTAL" {{$aluno->escolaridade == "ENSINO FUNDAMENTAL" ? 'selected' : ''}}>ENSINO FUNDAMENTAL</option>
-                            <option value="ENSINO MÉDIO INCOMPLETO" {{$aluno->escolaridade == "ENSINO MÉDIO INCOMPLETO" ? 'selected' : ''}}>ENSINO MÉDIO INCOMPLETO</option>
-                            <option value="ENSINO MÉDIO" {{$aluno->escolaridade == "ENSINO MÉDIO" ? 'selected' : ''}}>ENSINO MÉDIO</option>
-                            <option value="ENSINO SUPERIOR INCOMPLETO" {{$aluno->escolaridade == "ENSINO SUPERIOR INCOMPLETO" ? 'selected' : ''}}>ENSINO SUPERIOR INCOMPLETO</option>
-                            <option value="ENSINO SUPERIOR" {{$aluno->escolaridade == "ENSINO SUPERIOR" ? 'selected' : ''}}>ENSINO SUPERIOR</option>
+                            <option value="ENSINO FUNDAMENTAL INCOMPLETO" {{$aluno->escolaridade === "ENSINO FUNDAMENTAL INCOMPLETO" ? 'selected' : ''}}>ENSINO FUNDAMENTAL INCOMPLETO</option>
+                            <option value="ENSINO FUNDAMENTAL" {{$aluno->escolaridade === "ENSINO FUNDAMENTAL" ? 'selected' : ''}}>ENSINO FUNDAMENTAL</option>
+                            <option value="ENSINO MÉDIO INCOMPLETO" {{$aluno->escolaridade === "ENSINO MÉDIO INCOMPLETO" ? 'selected' : ''}}>ENSINO MÉDIO INCOMPLETO</option>
+                            <option value="ENSINO MÉDIO" {{$aluno->escolaridade === "ENSINO MÉDIO" ? 'selected' : ''}}>ENSINO MÉDIO</option>
+                            <option value="ENSINO SUPERIOR INCOMPLETO" {{$aluno->escolaridade === "ENSINO SUPERIOR INCOMPLETO" ? 'selected' : ''}}>ENSINO SUPERIOR INCOMPLETO</option>
+                            <option value="ENSINO SUPERIOR" {{$aluno->escolaridade === "ENSINO SUPERIOR" ? 'selected' : ''}}>ENSINO SUPERIOR</option>
                         </select>
+                        
+
                     </div>
 
                     <div class="col-sm-3 mb-3">
@@ -303,7 +307,7 @@
                 <div class="row">
                     <div class="col-sm-5 mb-3">
                         <label class="form-label">Nome Contato 3</label>
-                        <input class="form-control" name="nome_contato3" type="text" value="{{$aluno->nome_contao3}}" aria-label="" disabled>
+                        <input class="form-control" name="nome_contato3" type="text" value="{{$aluno->nome_contato3}}" aria-label="" disabled>
                     </div>
 
                     <div class="col-sm-3 mb-3">
