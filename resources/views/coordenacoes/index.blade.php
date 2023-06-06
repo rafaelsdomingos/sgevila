@@ -14,10 +14,10 @@
                                 <h6 class="fw-semibold mb-0">Nome</h6>
                             </th>
                             <th class="border-bottom-0">
-                                <h6 class="fw-semibold mb-0">Coordenador(a)</h6>
+                                <h6 class="fw-semibold mb-0">Sigla(a)</h6>
                             </th>
                             <th class="border-bottom-0">
-                                <h6 class="fw-semibold mb-0">Fone</h6>
+                                <h6 class="fw-semibold mb-0">Coord.</h6>
                             </th>
                             <th class="border-bottom-0">
                                 <h6 class="fw-semibold mb-0">E-Mail</h6>
@@ -34,9 +34,9 @@
                             <td>{{$coordenacao->nome}}</td>
                             <td>{{$coordenacao->sigla}}</td>
                             <td>{{$coordenacao->coordenador}}</td>
-                            <td>{{$coordenacao->fone}}</td>
+                            <td>{{$coordenacao->email}}</td>
                             <td>
-                                <a href="/alunos/{{$coordenacao->id}}" class="btn btn-primary btn-sm">
+                                <a href="{{route('coordenacoes.show', $coordenacao->id)}}" class="btn btn-primary btn-sm">
                                 <i class="fas fa-info-circle"></i>
                                 Detalhes
                                 </a>

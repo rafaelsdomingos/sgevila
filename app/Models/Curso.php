@@ -12,6 +12,7 @@ class Curso extends Model
     public function coordenacao(){
         return $this->belongsTo(Coordenacao::class);
     }
+
 }
 
 

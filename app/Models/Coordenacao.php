@@ -17,4 +17,8 @@ class Coordenacao extends Model
         'fone',
         'email',
     ];
+
+    public function cursos(){
+        return $this->hasMany(Curso::class);
+    }
 }

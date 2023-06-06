@@ -47,15 +47,15 @@
               <span class="hide-menu">ALUNOS</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="/alunos" aria-expanded="false">
+              <a class="sidebar-link" href="{{route('alunos.index')}}" aria-expanded="false">
                 <span>
                   <i class="ti ti-article"></i>
                 </span>
-                <span class="hide-menu">Listagem</span>
+                <span class="hide-menu">Consultas</span>
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="/alunos/create" aria-expanded="false">
+              <a class="sidebar-link" href="{{route('alunos.create')}}" aria-expanded="false">
                 <span>
                   <i class="ti ti-file-plus"></i>
                 </span>
@@ -106,24 +106,36 @@
 
             <li class="nav-small-cap">
               <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-              <span class="hide-menu">EXTRA</span>
+              <span class="hide-menu">COORDENACÕES</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="#" aria-expanded="false">
+              <a class="sidebar-link" href="{{route('coordenacoes.index')}}" aria-expanded="false">
                 <span>
-                  <i class="ti ti-mood-happy"></i>
+                  <i class="ti ti-article"></i>
                 </span>
-                <span class="hide-menu">Icons</span>
+                <span class="hide-menu">Consultas</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{{route('coordenacoes.create')}}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-file-description"></i>
+                </span>
+                <span class="hide-menu">Nova Coordenação</span>
               </a>
             </li>
             <li class="sidebar-item">
               <a class="sidebar-link" href="#" aria-expanded="false">
                 <span>
-                  <i class="ti ti-aperture"></i>
+                  <i class="ti ti-cards"></i>
                 </span>
-                <span class="hide-menu">Sample Page</span>
+                <span class="hide-menu">Relatórios</span>
               </a>
             </li>
+
+
+
+
           </ul>
           
         </nav>

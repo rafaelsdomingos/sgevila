@@ -16,6 +16,7 @@ class CoordenacaoController extends Controller
     }
     
     public function show(Coordenacao $coordenacao){
+        $coordenacao->load('cursos');
         return view('coordenacoes.show', [
             'coordenacao'=>$coordenacao,
         ]);
