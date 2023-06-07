@@ -9,7 +9,11 @@ class CursoController extends Controller
 {
     //
     public function index(){
-        return Curso::all();
+        $cursos = Curso::all();
+        $cursos->load('coordenacao');
+        return view('cursos.index', [
+            'cursos'=>$cursos,
+        ]);
     }
 
     public function show(Curso $curso){

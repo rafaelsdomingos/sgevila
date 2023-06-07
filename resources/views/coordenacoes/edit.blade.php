@@ -16,7 +16,8 @@
         <div class="card-body">
      
                         
-            <form method="POST" action="#">
+            <form method="POST" action="{{route('coordenacoes.update', $coordenacao->id)}}">
+                @method('PUT')
                 @csrf
                 <div class="row">
                     <div class="col-md-10 mb-3">
@@ -60,17 +61,17 @@
 
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editarCoord">
                             <i class="ti ti-save"></i>
-                            Editar
+                            Salvar
                         </button>
                     </div>
                 </div>
 
                 <!--Modal para Salvar -->
-                <div class="modal fade" id="salvarCoord" tabindex="-1" aria-labelledby="salvarCoord" aria-hidden="true">
+                <div class="modal fade" id="editarCoord" tabindex="-1" aria-labelledby="editarCoord" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h6 class="modal-title fs-5" id="salvarCoordLabel"><strong>Editar Coordenação</strong></h6>
+                                <h6 class="modal-title fs-5" id="editarCoordLabel"><strong>Editar Coordenação</strong></h6>
                             </div>
                             <div class="modal-body">
                                 Deseja salvar as alterações em <strong>{{$coordenacao->nome}}</strong>?

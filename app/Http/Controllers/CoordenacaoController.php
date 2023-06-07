@@ -32,4 +32,27 @@ class CoordenacaoController extends Controller
 
         return redirect()->route('coordenacoes.index');
     }
+
+    public function edit(Coordenacao $coordenacao){
+        return view('coordenacoes.edit', [
+            'coordenacao'=>$coordenacao,
+        ]);
+    }
+
+    public function update(StoreUpdateCoordenacaoFormRequest $request, $id){
+        if (!$coordenacao = Coordenacao::find($id)){
+            return redirect()->route('coordenacoes.index');
+        }
+        $coordenacao->update($request->all());
+        return redirect()->route('coordenacoes.index');
+    }
+
+    public function destroy($id){
+        if (!$coordenacao = Coordenacao::find($id)){
+            return redirect()->route('coordenacoes.index');
+        }
+        $coordenacao->delete();
+        return redirect()->route('coordenacoes.index');
+
+    }
 }

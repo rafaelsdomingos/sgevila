@@ -21,7 +21,8 @@
         <div class="card-body">
      
                         
-            <form method="POST" action="#">
+            <form method="POST" action="{{route('coordenacoes.destroy', $coordenacao->id)}}">
+                @method('DELETE')
                 @csrf
                 <div class="row">
                     <div class="col-md-10 mb-3">

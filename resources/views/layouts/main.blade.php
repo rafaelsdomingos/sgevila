@@ -7,6 +7,7 @@
   <title>SGE | Vila das Artes</title>
   <link rel="shortcut icon" type="image/png" href="{{asset('images/logos/favicon_vila.png')}}" />
   <link rel="stylesheet" href="{{asset('css/styles.min.css')}}" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
   @stack('styles')
 </head>
 
@@ -43,36 +44,62 @@
             </li>
 
             <li class="nav-small-cap">
-              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-              <span class="hide-menu">ALUNOS</span>
+              <i class="ti ti-sea nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">CONSULTAS</span>
             </li>
             <li class="sidebar-item">
               <a class="sidebar-link" href="{{route('alunos.index')}}" aria-expanded="false">
                 <span>
-                  <i class="ti ti-search"></i>
+                  <i class="ti ti-user"></i>
                 </span>
-                <span class="hide-menu">Consultas</span>
+                <span class="hide-menu">Alunos</span>
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="{{route('alunos.create')}}" aria-expanded="false">
+              <a class="sidebar-link" href="{{route('coordenacoes.index')}}" aria-expanded="false">
                 <span>
                   <i class="ti ti-file-plus"></i>
                 </span>
-                <span class="hide-menu">Novo Aluno(a)</span>
+                <span class="hide-menu">Coordenações</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{{route('cursos.index')}}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-file-plus"></i>
+                </span>
+                <span class="hide-menu">Cursos</span>
+              </a>
+            </li>
+
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="#" aria-expanded="false">
+                <span>
+                  <i class="ti ti-file-plus"></i>
+                </span>
+                <span class="hide-menu">Professores</span>
+              </a>
+            </li>
+
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="#" aria-expanded="false">
+                <span>
+                  <i class="ti ti-chalkboard"></i>
+                </span>
+                <span class="hide-menu">Turmas</span>
               </a>
             </li>
 
             <li class="nav-small-cap">
               <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-              <span class="hide-menu">COORDENACÕES</span>
+              <span class="hide-menu">CADASTROS</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="{{route('coordenacoes.index')}}" aria-expanded="false">
+              <a class="sidebar-link" href="{{route('alunos.create')}}" aria-expanded="false">
                 <span>
-                  <i class="ti ti-search"></i>
+                  <i class="ti ti-user-plus"></i>
                 </span>
-                <span class="hide-menu">Consultas</span>
+                <span class="hide-menu">Novo Aluno(a)</span>
               </a>
             </li>
             <li class="sidebar-item">
@@ -83,20 +110,6 @@
                 <span class="hide-menu">Nova Coordenação</span>
               </a>
             </li>
-            
-
-            <li class="nav-small-cap">
-              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-              <span class="hide-menu">CURSOS</span>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="{{route('cursos.index')}}" aria-expanded="false">
-                <span>
-                  <i class="ti ti-search"></i>
-                </span>
-                <span class="hide-menu">Consultas</span>
-              </a>
-            </li>
             <li class="sidebar-item">
               <a class="sidebar-link" href="#" aria-expanded="false">
                 <span>
@@ -105,56 +118,24 @@
                 <span class="hide-menu">Novo Curso</span>
               </a>
             </li>
-
-
-            <li class="nav-small-cap">
-              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-              <span class="hide-menu">PROFESSORES</span>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="#" aria-expanded="false">
-                <span>
-                  <i class="ti ti-search"></i>
-                </span>
-                <span class="hide-menu">Consultas</span>
-              </a>
-            </li>
             <li class="sidebar-item">
               <a class="sidebar-link" href="#" aria-expanded="false">
                 <span>
                   <i class="ti ti-file-plus"></i>
                 </span>
-                <span class="hide-menu">Cadastros</span>
-              </a>
-            </li>
-                      
-
-
-            <li class="nav-small-cap">
-              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-              <span class="hide-menu">TURMAS</span>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="#" aria-expanded="false">
-                <span>
-                  <i class="ti ti-search"></i>
-                </span>
-                <span class="hide-menu">Consultas</span>
+                <span class="hide-menu">Novo Professor</span>
               </a>
             </li>
             <li class="sidebar-item">
               <a class="sidebar-link" href="#" aria-expanded="false">
                 <span>
-                  <i class="ti ti-file-plus"></i>
+                  <i class="ti ti-users-plus"></i>
                 </span>
-                <span class="hide-menu">Cadastros</span>
+                <span class="hide-menu">Nova Turma</span>
               </a>
             </li>
 
-
-
-
-
+            
 
           </ul>
           

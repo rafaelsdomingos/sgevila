@@ -32,6 +32,9 @@ Route::prefix('alunos')->group(function(){
 
 //Grupo de Rotas dos Coordenações
 Route::prefix('coordenacoes')->group(function(){
+    Route::put('/{coordenacao}', [ CoordenacaoController::class, 'update'])->name('coordenacoes.update');
+    Route::delete('/{coordenacao}', [ CoordenacaoController::class, 'destroy'])->name('coordenacoes.destroy');
+    Route::get('/{coordenacao}/edit', [ CoordenacaoController::class, 'edit'])->name('coordenacoes.edit');
     Route::get('', [ CoordenacaoController::class, 'index'])->name('coordenacoes.index');
     Route::post('', [ CoordenacaoController::class, 'store'])->name('coordenacoes.store');
     Route::get('/create', [CoordenacaoController::class, 'create'])->name('coordenacoes.create');

@@ -5,25 +5,19 @@
 <div class="container-fluid">
     <div class="card">
     <div class="card-header">
-        <h5 class="card-title fw-semibold text-center">COORDENAÇÕES</h5>
+        <h5 class="card-title fw-semibold text-center">CURSOS</h5>
     </div>
     <div class="card-body">
         
             <div class="table-responsive">
-                <table id="tbl_coord" class="table text-nowrap mb-0 align-middle table-hover mt-2">
+                <table id="tbl_cursos" class="table text-nowrap mb-0 align-middle table-hover mt-2">
                     <thead class="text-dark fs-4">
                         <tr>
                             <th class="border-bottom-0">
                                 <h6 class="fw-semibold mb-0">Nome</h6>
                             </th>
                             <th class="border-bottom-0">
-                                <h6 class="fw-semibold mb-0">Sigla(a)</h6>
-                            </th>
-                            <th class="border-bottom-0">
-                                <h6 class="fw-semibold mb-0">Coord.</h6>
-                            </th>
-                            <th class="border-bottom-0">
-                                <h6 class="fw-semibold mb-0">E-Mail</h6>
+                                <h6 class="fw-semibold mb-0">Coordenacão</h6>
                             </th>
                             <th class="border-bottom-0">
                                 <h6 class="fw-semibold mb-0">Detalhes</h6>
@@ -32,17 +26,15 @@
                     </thead>
 
                     <tbody>
-                        @foreach ($coordenacoes as $coordenacao)
+                        @foreach ($cursos as $curso)
                         <tr>
-                            <td>{{$coordenacao->nome}}</td>
-                            <td>{{$coordenacao->sigla}}</td>
-                            <td>{{$coordenacao->coordenador}}</td>
-                            <td>{{$coordenacao->email}}</td>
+                            <td>{{$curso->nome}}</td>
+                            <td>{{$curso->coordenacao->sigla}}</td>
                             <td>
-                                <a href="{{route('coordenacoes.show', $coordenacao->id)}}" class="btn btn-secondary btn-sm">
+                                <a href="{{route('cursos.show', $curso->id)}}" class="btn btn-secondary btn-sm">
                                     <i class="ti ti-eye"></i>
                                 </a>
-                                <a href="{{route('coordenacoes.edit', $coordenacao->id)}}" class="btn btn-warning btn-sm">
+                                <a href="#" class="btn btn-warning btn-sm">
                                     <i class="ti ti-pencil"></i>    
                                 </a>
                             </td>
@@ -68,7 +60,7 @@
 <script src="{{asset('js/dataTables.bootstrap5.min.js')}}"></script>
 <script>
     $(document).ready(function () {
-        $('#tbl_coord').DataTable();
+        $('#tbl_cursos').DataTable();
     });
 </script>
 @endpush
