@@ -39,9 +39,11 @@
                             <td>{{$aluno->fone_contato2}}</td>
                             <td>{{$aluno->email_contato2}}</td>
                             <td>
-                                <a href="/alunos/{{$aluno->id}}" class="btn btn-primary btn-sm">
-                                <i class="fas fa-info-circle"></i>
-                                Detalhes
+                                <a href="{{route('alunos.show', $aluno->id)}}" class="btn btn-secondary btn-sm">
+                                    <i class="ti ti-eye"></i>
+                                </a>
+                                <a href="{{route('alunos.edit', $aluno->id)}}" class="btn btn-warning btn-sm">
+                                    <i class="ti ti-pencil"></i>    
                                 </a>
                             </td>
                         </tr>

@@ -7,12 +7,12 @@
         <div class="card-header d-flex justify-content-between align-items-center">
             <h5 class="card-title fw-semibold"></h5>
             <div>
-                <a href="{{route('alunos.index')}}" class="btn btn-primary">
+                <a href="{{route('alunos.index')}}" class="btn btn-secondary">
                     <i class="ti ti-arrow-left"></i>
                     Voltar
                 </a>
 
-                <a href="{{route('alunos.edit', $aluno->id)}}" class="btn btn-success">
+                <a href="{{route('alunos.edit', $aluno->id)}}" class="btn btn-warning">
                     <i class="ti ti-pencil"></i>
                     Editar
                 </a>
@@ -384,12 +384,12 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <h5 class="card-title fw-semibold"></h5>
                     <div>
-                        <a href="{{route('alunos.index')}}" class="btn btn-primary">
+                        <a href="{{route('alunos.index')}}" class="btn btn-secondary">
                             <i class="ti ti-arrow-left"></i>
                             Voltar
                         </a>
         
-                        <a href="{{route('alunos.edit', $aluno->id)}}" class="btn btn-success">
+                        <a href="{{route('alunos.edit', $aluno->id)}}" class="btn btn-warning">
                             <i class="ti ti-pencil"></i>
                             Editar
                         </a>
@@ -412,7 +412,7 @@
                                 Deseja realmente excluir <strong>{{$aluno->nome}}</strong>?
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancelar</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                                 <button type="submit" class="btn btn-danger">Deletar</button>
                             </div>
                         </div>

@@ -7,8 +7,8 @@
         <div class="card-header d-flex justify-content-between align-items-center">
             <h5 class="card-title fw-semibold">Cadastro de Coordenações</h5>
             <div>
-                <a href="{{route('coordenacoes.index')}}" class="btn btn-secondary">
-                    <i class="ti ti-arrow-left"></i>
+                <a href="{{route('coordenacoes.show', $coordenacao->id)}}" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i>
                     Voltar
                 </a>
             </div>
@@ -16,34 +16,34 @@
         <div class="card-body">
      
                         
-            <form method="POST" action="{{route('coordenacoes.store')}}">
+            <form method="POST" action="#">
                 @csrf
                 <div class="row">
                     <div class="col-md-10 mb-3">
                         <label class="form-label">Nome da Coordenação</label>
-                        <input class="form-control" name="nome" type="text" value="" aria-label="" >
+                        <input class="form-control" name="nome" type="text" value="{{$coordenacao->nome}}" aria-label="" >
                       
                     </div>
                     <div class="col-sm-2 mb-3">
                         <label class="form-label">Sigla</label>
-                        <input class="form-control" name="sigla" type="text" value="" aria-label="" >
+                        <input class="form-control" name="sigla" type="text" value="{{$coordenacao->sigla}}" aria-label="" >
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-md-4 mb-3">
                         <label class="form-label">Coordenador(a)</label>
-                        <input class="form-control" name="coordenador" type="text" value="" aria-label="" >
+                        <input class="form-control" name="coordenador" type="text" value="{{$coordenacao->coordenador}}" aria-label="" >
                       
                     </div>
                     <div class="col-sm-4 mb-3">
                         <label class="form-label">Telefone</label>
-                        <input class="form-control" name="fone" type="text" value="" aria-label="" >
+                        <input class="form-control" name="fone" type="text" value="{{$coordenacao->fone}}" aria-label="" >
                     </div>
 
                     <div class="col-sm-4 mb-3">
                         <label class="form-label">Email</label>
-                        <input class="form-control" name="email" type="text" value="" aria-label="" >
+                        <input class="form-control" name="email" type="text" value="{{$coordenacao->email}}" aria-label="" >
                     </div>
                 </div>
 
@@ -58,9 +58,9 @@
                             Limpar
                         </button>
 
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#salvarCoord">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editarCoord">
                             <i class="ti ti-save"></i>
-                            Salvar
+                            Editar
                         </button>
                     </div>
                 </div>
@@ -70,10 +70,10 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h6 class="modal-title fs-5" id="salvarCoordLabel"><strong>Salvar Coordenação</strong></h6>
+                                <h6 class="modal-title fs-5" id="salvarCoordLabel"><strong>Editar Coordenação</strong></h6>
                             </div>
                             <div class="modal-body">
-                                Deseja salvar a nova Coordenação?
+                                Deseja salvar as alterações em <strong>{{$coordenacao->nome}}</strong>?
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>

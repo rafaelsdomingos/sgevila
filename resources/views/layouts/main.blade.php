@@ -49,7 +49,7 @@
             <li class="sidebar-item">
               <a class="sidebar-link" href="{{route('alunos.index')}}" aria-expanded="false">
                 <span>
-                  <i class="ti ti-article"></i>
+                  <i class="ti ti-search"></i>
                 </span>
                 <span class="hide-menu">Consultas</span>
               </a>
@@ -59,19 +59,75 @@
                 <span>
                   <i class="ti ti-file-plus"></i>
                 </span>
-                <span class="hide-menu">Novo Aluno</span>
+                <span class="hide-menu">Novo Aluno(a)</span>
+              </a>
+            </li>
+
+            <li class="nav-small-cap">
+              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">COORDENACÕES</span>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{{route('coordenacoes.index')}}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-search"></i>
+                </span>
+                <span class="hide-menu">Consultas</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{{route('coordenacoes.create')}}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-file-plus"></i>
+                </span>
+                <span class="hide-menu">Nova Coordenação</span>
+              </a>
+            </li>
+            
+
+            <li class="nav-small-cap">
+              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">CURSOS</span>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{{route('cursos.index')}}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-search"></i>
+                </span>
+                <span class="hide-menu">Consultas</span>
               </a>
             </li>
             <li class="sidebar-item">
               <a class="sidebar-link" href="#" aria-expanded="false">
                 <span>
-                  <i class="ti ti-cards"></i>
+                  <i class="ti ti-file-plus"></i>
                 </span>
-                <span class="hide-menu">Relatórios</span>
+                <span class="hide-menu">Novo Curso</span>
               </a>
             </li>
 
-            
+
+            <li class="nav-small-cap">
+              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">PROFESSORES</span>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="#" aria-expanded="false">
+                <span>
+                  <i class="ti ti-search"></i>
+                </span>
+                <span class="hide-menu">Consultas</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="#" aria-expanded="false">
+                <span>
+                  <i class="ti ti-file-plus"></i>
+                </span>
+                <span class="hide-menu">Cadastros</span>
+              </a>
+            </li>
+                      
 
 
             <li class="nav-small-cap">
@@ -81,57 +137,21 @@
             <li class="sidebar-item">
               <a class="sidebar-link" href="#" aria-expanded="false">
                 <span>
-                  <i class="ti ti-article"></i>
-                </span>
-                <span class="hide-menu">Listas</span>
-              </a>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="#" aria-expanded="false">
-                <span>
-                  <i class="ti ti-file-description"></i>
-                </span>
-                <span class="hide-menu">Cadastros</span>
-              </a>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="#" aria-expanded="false">
-                <span>
-                  <i class="ti ti-cards"></i>
-                </span>
-                <span class="hide-menu">Relatórios</span>
-              </a>
-            </li>
-
-
-            <li class="nav-small-cap">
-              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-              <span class="hide-menu">COORDENACÕES</span>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="{{route('coordenacoes.index')}}" aria-expanded="false">
-                <span>
-                  <i class="ti ti-article"></i>
+                  <i class="ti ti-search"></i>
                 </span>
                 <span class="hide-menu">Consultas</span>
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="{{route('coordenacoes.create')}}" aria-expanded="false">
-                <span>
-                  <i class="ti ti-file-description"></i>
-                </span>
-                <span class="hide-menu">Nova Coordenação</span>
-              </a>
-            </li>
-            <li class="sidebar-item">
               <a class="sidebar-link" href="#" aria-expanded="false">
                 <span>
-                  <i class="ti ti-cards"></i>
+                  <i class="ti ti-file-plus"></i>
                 </span>
-                <span class="hide-menu">Relatórios</span>
+                <span class="hide-menu">Cadastros</span>
               </a>
             </li>
+
+
 
 
 

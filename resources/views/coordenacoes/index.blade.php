@@ -4,8 +4,11 @@
 
 <div class="container-fluid">
     <div class="card">
+    <div class="card-header">
+        <h5 class="card-title fw-semibold text-center">COORDENAÇÕES</h5>
+    </div>
     <div class="card-body">
-        <h5 class="card-title fw-semibold mb-4 text-center">COORDENAÇÕES </h5>
+        
             <div class="table-responsive">
                 <table id="tbl_coord" class="table text-nowrap mb-0 align-middle table-hover mt-2">
                     <thead class="text-dark fs-4">
@@ -36,9 +39,11 @@
                             <td>{{$coordenacao->coordenador}}</td>
                             <td>{{$coordenacao->email}}</td>
                             <td>
-                                <a href="{{route('coordenacoes.show', $coordenacao->id)}}" class="btn btn-primary btn-sm">
-                                <i class="fas fa-info-circle"></i>
-                                Detalhes
+                                <a href="{{route('coordenacoes.show', $coordenacao->id)}}" class="btn btn-secondary btn-sm">
+                                    <i class="ti ti-eye"></i>
+                                </a>
+                                <a href="#" class="btn btn-warning btn-sm">
+                                    <i class="ti ti-pencil"></i>    
                                 </a>
                             </td>
                         </tr>

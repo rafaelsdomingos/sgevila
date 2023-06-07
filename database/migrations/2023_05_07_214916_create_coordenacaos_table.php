@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('nome');
             $table->string('sigla');
             $table->string('coordenador');
-            $table->string('fone');
-            $table->string('email');
+            $table->string('fone')->nullable();
+            $table->string('email')->nullable();
             $table->timestamps();
         });
     }
