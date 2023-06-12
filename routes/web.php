@@ -63,3 +63,6 @@ Route::prefix('professores')->group(function(){
 Route::get('/', function () {
     return view('layouts.main');
 });
+
+
+require __DIR__.'/auth.php';
