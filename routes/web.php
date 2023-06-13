@@ -20,49 +20,56 @@ use App\Http\Controllers\TurmaController;
 */
 
 //Grupo de Rotas dos Alunos
-Route::prefix('alunos')->group(function(){
-    Route::put('/{aluno}', [ AlunoController::class, 'update'])->name('alunos.update');
-    Route::delete('/{aluno}', [ AlunoController::class, 'destroy'])->name('alunos.destroy');
-    Route::get('/{aluno}/edit', [ AlunoController::class, 'edit'])->name('alunos.edit');
-    Route::get('', [ AlunoController::class, 'index'])->name('alunos.index');
-    Route::post('', [ AlunoController::class, 'store'])->name('alunos.store');
-    Route::get('/create', [ AlunoController::class, 'create'])->name('alunos.create');
-    Route::get('/{aluno}', [AlunoController::class, 'show'])->name('alunos.show');
-});
+Route::middleware('auth')->group(function () {
 
-//Grupo de Rotas dos Coordenações
-Route::prefix('coordenacoes')->group(function(){
-    Route::put('/{coordenacao}', [ CoordenacaoController::class, 'update'])->name('coordenacoes.update');
-    Route::delete('/{coordenacao}', [ CoordenacaoController::class, 'destroy'])->name('coordenacoes.destroy');
-    Route::get('/{coordenacao}/edit', [ CoordenacaoController::class, 'edit'])->name('coordenacoes.edit');
-    Route::get('', [ CoordenacaoController::class, 'index'])->name('coordenacoes.index');
-    Route::post('', [ CoordenacaoController::class, 'store'])->name('coordenacoes.store');
-    Route::get('/create', [CoordenacaoController::class, 'create'])->name('coordenacoes.create');
-    Route::get('/{coordenacao}', [CoordenacaoController::class, 'show'])->name('coordenacoes.show');
-});
-
-//Grupo de Rotas dos Cursos
-Route::prefix('cursos')->group(function(){
-    Route::get('', [ CursoController::class, 'index'])->name('cursos.index');
-    Route::post('', [ CursoController::class, 'store'])->name('cursos.store');
-    Route::get('/create', [CursoController::class, 'create'])->name('cursos.create');
-    Route::get('/{curso}', [CursoController::class, 'show'])->name('cursos.show');
-});
+    //Grupo de Rotas dos Alunos
+    Route::prefix('alunos')->group(function(){
+        Route::put('/{aluno}', [ AlunoController::class, 'update'])->name('alunos.update');
+        Route::delete('/{aluno}', [ AlunoController::class, 'destroy'])->name('alunos.destroy');
+        Route::get('/{aluno}/edit', [ AlunoController::class, 'edit'])->name('alunos.edit');
+        Route::get('', [ AlunoController::class, 'index'])->name('alunos.index');
+        Route::post('', [ AlunoController::class, 'store'])->name('alunos.store');
+        Route::get('/create', [ AlunoController::class, 'create'])->name('alunos.create');
+        Route::get('/{aluno}', [AlunoController::class, 'show'])->name('alunos.show');
+    });
 
 
-//Grupo de Rotas dos Professores
-Route::prefix('professores')->group(function(){
-    Route::get('', [ ProfessorController::class, 'index'])->name('professores.index');
-    Route::post('', [ ProfessorController::class, 'store'])->name('professores.store');
-    Route::get('/create', [ProfessorController::class, 'create'])->name('professores.create');
-    Route::get('/{professor}', [ProfessorController::class, 'show'])->name('professores.show');
+
+    //Grupo de Rotas dos Coordenações
+    Route::prefix('coordenacoes')->group(function(){
+        Route::put('/{coordenacao}', [ CoordenacaoController::class, 'update'])->name('coordenacoes.update');
+        Route::delete('/{coordenacao}', [ CoordenacaoController::class, 'destroy'])->name('coordenacoes.destroy');
+        Route::get('/{coordenacao}/edit', [ CoordenacaoController::class, 'edit'])->name('coordenacoes.edit');
+        Route::get('', [ CoordenacaoController::class, 'index'])->name('coordenacoes.index');
+        Route::post('', [ CoordenacaoController::class, 'store'])->name('coordenacoes.store');
+        Route::get('/create', [CoordenacaoController::class, 'create'])->name('coordenacoes.create');
+        Route::get('/{coordenacao}', [CoordenacaoController::class, 'show'])->name('coordenacoes.show');
+    });
+
+    //Grupo de Rotas dos Cursos
+    Route::prefix('cursos')->group(function(){
+        Route::get('', [ CursoController::class, 'index'])->name('cursos.index');
+        Route::post('', [ CursoController::class, 'store'])->name('cursos.store');
+        Route::get('/create', [CursoController::class, 'create'])->name('cursos.create');
+        Route::get('/{curso}', [CursoController::class, 'show'])->name('cursos.show');
+    });
+
+
+    //Grupo de Rotas dos Professores
+    Route::prefix('professores')->group(function(){
+        Route::get('', [ ProfessorController::class, 'index'])->name('professores.index');
+        Route::post('', [ ProfessorController::class, 'store'])->name('professores.store');
+        Route::get('/create', [ProfessorController::class, 'create'])->name('professores.create');
+        Route::get('/{professor}', [ProfessorController::class, 'show'])->name('professores.show');
+    });
+
 });
 
 
 //Rota inicial
-Route::get('/', function () {
-    return view('layouts.main');
-});
+//Route::get('/', function () {
+//    return view('layouts.main');
+//});
 
 
 require __DIR__.'/auth.php';

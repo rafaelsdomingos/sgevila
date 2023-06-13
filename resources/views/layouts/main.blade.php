@@ -21,7 +21,7 @@
       <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
           <a href="/" class="text-nowrap logo-img">
-            <img src="{{asset('images/logos/logo_vila.png')}}" width="180" alt="" />
+            <img src="{{asset('images/logos/logo_vila.png')}}" width="180" alt="Logo Vila das Artes" />
           </a>
           <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
             <i class="ti ti-x fs-8"></i>
@@ -55,6 +55,8 @@
                 <span class="hide-menu">Alunos</span>
               </a>
             </li>
+
+            @can('admin')
             <li class="sidebar-item">
               <a class="sidebar-link" href="{{route('coordenacoes.index')}}" aria-expanded="false">
                 <span>
@@ -63,6 +65,8 @@
                 <span class="hide-menu">Coordenações</span>
               </a>
             </li>
+            @endcan
+
             <li class="sidebar-item">
               <a class="sidebar-link" href="{{route('cursos.index')}}" aria-expanded="false">
                 <span>
@@ -102,6 +106,8 @@
                 <span class="hide-menu">Novo Aluno(a)</span>
               </a>
             </li>
+
+            @can('admin')
             <li class="sidebar-item">
               <a class="sidebar-link" href="{{route('coordenacoes.create')}}" aria-expanded="false">
                 <span>
@@ -110,6 +116,8 @@
                 <span class="hide-menu">Nova Coordenação</span>
               </a>
             </li>
+            @endcan
+            
             <li class="sidebar-item">
               <a class="sidebar-link" href="#" aria-expanded="false">
                 <span>
@@ -166,12 +174,13 @@
             </li>
           </ul>
           <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
+            
             <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
-              
+              <strong>{{ Auth::user()->name }}</strong>
               <li class="nav-item dropdown">
                 <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
                   aria-expanded="false">
-                  <img src="{{asset('images/profile/user-1.jpg')}}" alt="" width="35" height="35" class="rounded-circle">
+                  <img src="{{asset('images/profile/user-2.png')}}" alt="" width="35" height="35" class="rounded-circle">
                 </a>
                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
                   <div class="message-body">
@@ -187,7 +196,13 @@
                       <i class="ti ti-list-check fs-6"></i>
                       <p class="mb-0 fs-3">My Task</p>
                     </a>
-                    <a href="./authentication-login.html" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
+                    <form method="POST" action="{{ route('logout') }}">
+                      @csrf
+                      <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</button>
+                      </div>
+                    </form>
+                    
                   </div>
                 </div>
               </li>
