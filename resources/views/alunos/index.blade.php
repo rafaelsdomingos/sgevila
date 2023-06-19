@@ -10,7 +10,7 @@
     <div class="card-body">
         
             <div class="table-responsive">
-                <table id="tbl_alunos" class="table text-nowrap mb-0 align-middle table-striped mt-2">
+                <table id="tbl_alunos" class="table text-nowrap mb-0 align-middle table-hover mt-2">
                     <thead class="text-dark fs-4">
                         <tr>
                             <th class="border-bottom-0">
@@ -26,7 +26,7 @@
                                 <h6 class="fw-semibold mb-0">Email</h6>
                             </th>
                             <th class="border-bottom-0">
-                                <h6 class="fw-semibold mb-0">Detalhes</h6>
+                                <h6 class="fw-semibold mb-0">Ações</h6>
                             </th>
                         </tr>
                     </thead>

@@ -20,6 +20,9 @@
                                 <h6 class="fw-semibold mb-0">Coordenacão</h6>
                             </th>
                             <th class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0">Descrição</h6>
+                            </th>
+                            <th class="border-bottom-0">
                                 <h6 class="fw-semibold mb-0">Detalhes</h6>
                             </th>
                         </tr>
@@ -30,6 +33,7 @@
                         <tr>
                             <td>{{$curso->nome}}</td>
                             <td>{{$curso->coordenacao->sigla}}</td>
+                            <td>{{$curso->descricao}}</td>
                             <td>
                                 <a href="{{route('cursos.show', $curso->id)}}" class="btn btn-secondary btn-sm">
                                     <i class="ti ti-eye"></i>

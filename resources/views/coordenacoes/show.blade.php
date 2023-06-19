@@ -101,18 +101,15 @@
                     <thead class="text-dark fs-4">
                         <tr>
                             <th class="border-bottom-0">
-                                <h6 class="fw-semibold mb-0">Id</h6>
+                                <h6 class="fw-semibold mb-0">Curso</h6>
                             </th>
 
                             <th class="border-bottom-0">
-                                <h6 class="fw-semibold mb-0">Nome do Curso</h6>
+                                <h6 class="fw-semibold mb-0">Descrição</h6>
                             </th>
+                                                        
                             <th class="border-bottom-0">
-                                <h6 class="fw-semibold mb-0"></h6>
-                            </th>
-                            
-                            <th class="border-bottom-0">
-                                <h6 class="fw-semibold mb-0">Detalhes</h6>
+                                <h6 class="fw-semibold mb-0">Ações</h6>
                             </th>
                         </tr>
                     </thead>
@@ -120,9 +117,8 @@
                     <tbody>
                         @foreach ($coordenacao->cursos as $curso)
                         <tr>
-                            <td>{{$curso->id}}</td>
                             <td>{{$curso->nome}}</td>
-                            <td></td>
+                            <td>{{$curso->descricao}}</td>
                             <td>
                                 <a href="{{route('cursos.show', $curso->id)}}" class="btn btn-primary btn-sm">
                                 <i class="fas fa-info-circle"></i>
