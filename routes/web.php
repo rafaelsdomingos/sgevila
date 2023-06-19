@@ -33,8 +33,6 @@ Route::middleware('auth')->group(function () {
         Route::get('/{aluno}', [AlunoController::class, 'show'])->name('alunos.show');
     });
 
-
-
     //Grupo de Rotas dos Coordenações
     Route::prefix('coordenacoes')->group(function(){
         Route::put('/{coordenacao}', [ CoordenacaoController::class, 'update'])->name('coordenacoes.update');
