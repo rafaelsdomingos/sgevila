@@ -5,9 +5,9 @@
 <div class="container-fluid">
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
-            <h5 class="card-title fw-semibold">Informações sobre a Turma</h5>
+            <h5 class="card-title fw-semibold">Informações sobre o Curso</h5>
             <div>
-                <a href="{{route('turmas.index')}}" class="btn btn-secondary">
+                <a href="{{route('cursos.index')}}" class="btn btn-secondary">
                     <i class="ti ti-arrow-left"></i>
                     Voltar
                 </a>
@@ -25,28 +25,23 @@
                 @method('DELETE')
                 @csrf
                 <div class="row">
-                    <div class="col-md-10 mb-3">
-                        <label class="form-label">Turma</label>
-                        <input class="form-control" name="nome" type="text" value="{{$turma->nome}}" aria-label="Nome da Coordenação" readonly>
+                    <div class="col-md-9 mb-3">
+                        <label class="form-label">Curso</label>
+                        <input class="form-control" name="nome" type="text" value="{{$curso->nome}}" aria-label="Nome do Curso" readonly>
                       
                     </div>
-                    <div class="col-sm-2 mb-3">
-                        <label class="form-label">Ano</label>
-                        <input class="form-control" name="ano_letivo" type="text" value="{{$turma->ano_letivo}}" aria-label="Ano" readonly>
+                    <div class="col-sm-3 mb-3">
+                        <label class="form-label">Coordenacação</label>
+                        <input class="form-control" name="sigla" type="text" value="{{$curso->coordenacao->sigla}}" aria-label="Sigla" readonly>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-4 mb-3">
-                        <label class="form-label">Turno</label>
-                        <input class="form-control" name="turno" type="text" value="{{$turma->turno}}" aria-label="Turno" readonly>
+                    <div class="col-md-12 mb-3">
+                        <label class="form-label">Descrição</label>
+                        <input class="form-control" name="descricao" type="text" value="{{$curso->descricao}}" aria-label="Descrição" readonly>
                       
                     </div>
-                    <div class="col-sm-8 mb-3">
-                        <label class="form-label">Descrição</label>
-                        <input class="form-control" name="descricao" type="text" value="{{$turma->descricao}}" aria-label="Descrição" readonly>
-                    </div>
-
                 </div>
 
              
@@ -55,7 +50,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <h5 class="card-title fw-semibold"></h5>
                     <div>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deletarTurna">
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deletarCurso">
                             <i class="ti ti-trash"></i>
                             Deletar
                         </button>
@@ -63,14 +58,14 @@
                 </div>
 
                 <!--Modal para Salvar -->
-                <div class="modal fade" id="deletarTurna" tabindex="-1" aria-labelledby="deletarTurma" aria-hidden="true">
+                <div class="modal fade" id="deletarCurso" tabindex="-1" aria-labelledby="deletarCurso" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h6 class="modal-title fs-5" id="deletarTurmaLabel"><strong>Deletar Coordenação</strong></h6>
+                                <h6 class="modal-title fs-5" id="deletarCursoLabel"><strong>Deletar Curso</strong></h6>
                             </div>
                             <div class="modal-body">
-                                Deseja realmente deletar a <strong>{{$turma->nome}}</strong>?
+                                Deseja realmente deletar o <strong>{{$curso->nome}}</strong>?
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>
@@ -88,22 +83,25 @@
     <!--card dos cursos da coordenação -->
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
-            <h5 class="card-title fw-semibold">Alunos(as) matriculados na Turma</h5>
+            <h5 class="card-title fw-semibold">Turmas deste curso</h5>
         </div>
         <div class="card-body">          
             
             <div class="table-responsive">
-                <table id="tbl_alunos" class="table text-nowrap mb-0 align-middle table-hover mt-2">
+                <table id="tbl_alunos" class="table text-nowrap mb-0 align-middle table-striped mt-2">
                     <thead class="text-dark fs-4">
                         <tr>
                             <th class="border-bottom-0">
-                                <h6 class="fw-semibold mb-0">Aluno(a)</h6>
+                                <h6 class="fw-semibold mb-0">Ano</h6>
                             </th>
 
                             <th class="border-bottom-0">
-                                <h6 class="fw-semibold mb-0">Responsável</h6>
+                                <h6 class="fw-semibold mb-0">Turma</h6>
                             </th>
                                                         
+                            <th class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0">Turno</h6>
+                            </th>
                             <th class="border-bottom-0">
                                 <h6 class="fw-semibold mb-0">Ações</h6>
                             </th>
@@ -111,12 +109,13 @@
                     </thead>
 
                     <tbody>
-                        @foreach ($turma->alunos as $aluno)
+                        @foreach ($curso->turmas as $turma)
                         <tr>
-                            <td>{{$aluno->nome}}</td>
-                            <td>{{$aluno->mae}}</td>
+                            <td>{{$turma->ano_letivo}}</td>
+                            <td>{{$turma->nome}}</td>
+                            <td>{{$turma->turno}}</td>
                             <td>
-                                <a href="{{route('alunos.show', $aluno->id)}}" class="btn btn-primary btn-sm">
+                                <a href="{{route('turmas.show', $turma->id)}}" class="btn btn-primary btn-sm">
                                 <i class="fas fa-info-circle"></i>
                                 Detalhes
                                 </a>

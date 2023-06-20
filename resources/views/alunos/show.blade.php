@@ -7,7 +7,7 @@
         <div class="card-header d-flex justify-content-between align-items-center">
             <h5 class="card-title fw-semibold"></h5>
             <div>
-                <a href="{{route('alunos.index')}}" class="btn btn-secondary">
+                <a href="{{url()->previous()}}" class="btn btn-secondary">
                     <i class="ti ti-arrow-left"></i>
                     Voltar
                 </a>
@@ -384,7 +384,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <h5 class="card-title fw-semibold"></h5>
                     <div>
-                        <a href="{{route('alunos.index')}}" class="btn btn-secondary">
+                        <a href="{{url()->previous()}}" class="btn btn-secondary">
                             <i class="ti ti-arrow-left"></i>
                             Voltar
                         </a>

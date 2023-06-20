@@ -52,6 +52,15 @@ Route::middleware('auth')->group(function () {
         Route::get('/{curso}', [CursoController::class, 'show'])->name('cursos.show');
     });
 
+    
+    //Grupo de Rotas das Turmas
+    Route::prefix('turmas')->group(function(){
+        Route::get('', [ TurmaController::class, 'index'])->name('turmas.index');
+        Route::post('', [ TurmaController::class, 'store'])->name('turmas.store');
+        Route::get('/create', [TurmaController::class, 'create'])->name('turmas.create');
+        Route::get('/{turma}', [TurmaController::class, 'show'])->name('turmas.show');
+    });
+
 
     //Grupo de Rotas dos Professores
     Route::prefix('professores')->group(function(){
