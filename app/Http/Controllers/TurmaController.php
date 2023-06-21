@@ -18,6 +18,7 @@ class TurmaController extends Controller
     public function show(Turma $turma){
         $turma->load('curso');
         $turma->load('alunos');
+        $turma->load('modulos');
         return view('turmas.show', [
             'turma'=>$turma,
         ]);

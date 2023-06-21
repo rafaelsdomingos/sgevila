@@ -18,5 +18,10 @@ class Turma extends Model
         return $this->belongsToMany(Aluno::class);
     }
 
+    public function modulos(){
+        return $this->hasMany(Modulo::class);
+    }
+
+
 
 }

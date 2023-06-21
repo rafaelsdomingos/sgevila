@@ -87,45 +87,101 @@
 
     <!--card dos cursos da coordenação -->
     <div class="card">
+        <!--
         <div class="card-header d-flex justify-content-between align-items-center">
             <h5 class="card-title fw-semibold">Alunos(as) matriculados na Turma</h5>
         </div>
-        <div class="card-body">          
+        -->
+        <div class="card-body">
             
-            <div class="table-responsive">
-                <table id="tbl_alunos" class="table text-nowrap mb-0 align-middle table-hover mt-2">
-                    <thead class="text-dark fs-4">
-                        <tr>
-                            <th class="border-bottom-0">
-                                <h6 class="fw-semibold mb-0">Aluno(a)</h6>
-                            </th>
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" data-bs-toggle="tab" href="#aba1">Alunos(as)</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#aba2">Módulos</a>
+                </li>
+            </ul>
 
-                            <th class="border-bottom-0">
-                                <h6 class="fw-semibold mb-0">Responsável</h6>
-                            </th>
-                                                        
-                            <th class="border-bottom-0">
-                                <h6 class="fw-semibold mb-0">Ações</h6>
-                            </th>
-                        </tr>
-                    </thead>
+            <div id="aba" class="tab-content">
+                <div id="aba1" class="tab-pane fade active show">
 
-                    <tbody>
-                        @foreach ($turma->alunos as $aluno)
-                        <tr>
-                            <td>{{$aluno->nome}}</td>
-                            <td>{{$aluno->mae}}</td>
-                            <td>
-                                <a href="{{route('alunos.show', $aluno->id)}}" class="btn btn-primary btn-sm">
-                                <i class="fas fa-info-circle"></i>
-                                Detalhes
-                                </a>
-                            </td>
-                        </tr>
-                      @endforeach
-                    </tbody>
-                </table>
+                    <div class="table-responsive">
+                        <table id="tbl_alunos" class="table text-nowrap mb-0 align-middle table-hover mt-2">
+                            <thead class="text-dark fs-4">
+                                <tr>
+                                    <th class="border-bottom-0">
+                                        <h6 class="fw-semibold mb-0">Aluno(a)</h6>
+                                    </th>
+        
+                                    <th class="border-bottom-0">
+                                        <h6 class="fw-semibold mb-0">Responsável</h6>
+                                    </th>
+                                                                
+                                    <th class="border-bottom-0">
+                                        <h6 class="fw-semibold mb-0">Ações</h6>
+                                    </th>
+                                </tr>
+                            </thead>
+        
+                            <tbody>
+                                @foreach ($turma->alunos as $aluno)
+                                <tr>
+                                    <td>{{$aluno->nome}}</td>
+                                    <td>{{$aluno->mae}}</td>
+                                    <td>
+                                        <a href="{{route('alunos.show', $aluno->id)}}" class="btn btn-primary btn-sm">
+                                        <i class="fas fa-info-circle"></i>
+                                        Detalhes
+                                        </a>
+                                    </td>
+                                </tr>
+                              @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                </div>
+
+                <div id="aba2" class="tab-pane fade">
+                    
+                    <div class="table-responsive">
+                        <table id="tbl_alunos" class="table text-nowrap mb-0 align-middle table-hover mt-2">
+                            <thead class="text-dark fs-4">
+                                <tr>
+                                    <th class="border-bottom-0">
+                                        <h6 class="fw-semibold mb-0">Módulo</h6>
+                                    </th>
+        
+                                    <th class="border-bottom-0">
+                                        <h6 class="fw-semibold mb-0">Carga Horária</h6>
+                                    </th>
+                                </tr>
+                            </thead>
+        
+                            <tbody>
+                                @foreach ($turma->modulos as $modulo)
+                                <tr>
+                                    <td>{{$modulo->nome}}</td>
+                                    <td>{{$modulo->carga_horaria}}</td>
+                                    <td>
+                                        <a href="#" class="btn btn-primary btn-sm">
+                                        <i class="fas fa-info-circle"></i>
+                                        Detalhes
+                                        </a>
+                                    </td>
+                                </tr>
+                              @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+
             </div>
+            
         </div>
     </div>
 

@@ -18,7 +18,8 @@ return new class extends Migration
                 ->onDelete('CASCADE')
                 ->onUpdate('CASCADE');
             $table->string('nome');
-            $table->string('ano_letivo');
+            $table->date('inicio');
+            $table->date('fim');
             $table->string('turno');
             $table->string('descricao')->nullable();
             $table->timestamps();

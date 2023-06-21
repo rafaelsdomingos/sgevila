@@ -85,22 +85,22 @@
         <div class="card-header d-flex justify-content-between align-items-center">
             <h5 class="card-title fw-semibold">Turmas deste curso</h5>
         </div>
-        <div class="card-body">          
-            
+        <div class="card-body">    
             <div class="table-responsive">
                 <table id="tbl_alunos" class="table text-nowrap mb-0 align-middle table-striped mt-2">
                     <thead class="text-dark fs-4">
                         <tr>
                             <th class="border-bottom-0">
-                                <h6 class="fw-semibold mb-0">Ano</h6>
-                            </th>
-
-                            <th class="border-bottom-0">
                                 <h6 class="fw-semibold mb-0">Turma</h6>
-                            </th>
-                                                        
+                            </th>                    
                             <th class="border-bottom-0">
                                 <h6 class="fw-semibold mb-0">Turno</h6>
+                            </th>
+                            <th class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0">Início</h6>
+                            </th>
+                            <th class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0">Término</h6>
                             </th>
                             <th class="border-bottom-0">
                                 <h6 class="fw-semibold mb-0">Ações</h6>
@@ -111,9 +111,10 @@
                     <tbody>
                         @foreach ($curso->turmas as $turma)
                         <tr>
-                            <td>{{$turma->ano_letivo}}</td>
                             <td>{{$turma->nome}}</td>
                             <td>{{$turma->turno}}</td>
+                            <td>{{$turma->inicio}}</td>
+                            <td>{{$turma->fim}}</td>
                             <td>
                                 <a href="{{route('turmas.show', $turma->id)}}" class="btn btn-primary btn-sm">
                                 <i class="fas fa-info-circle"></i>
@@ -125,6 +126,7 @@
                     </tbody>
                 </table>
             </div>
+
         </div>
     </div>
 
