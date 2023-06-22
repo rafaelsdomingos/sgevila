@@ -9,8 +9,8 @@ class Modulo extends Model
 {
     use HasFactory;
 
-    public function turma(){
-        return $this->belongsTo(Turma::class);
+    public function etapa(){
+        return $this->belongsTo(Etapa::class);
     }
 
 }

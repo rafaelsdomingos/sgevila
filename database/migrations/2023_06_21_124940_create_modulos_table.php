@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('modulos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('turma_id')
+            $table->foreignId('etapa_id')
                 ->constrained()
                 ->onDelete('CASCADE')
                 ->onUpdate('CASCADE');
             $table->string('nome');
+            $table->bigInteger('qtd_aula');
             $table->bigInteger('carga_horaria');
             $table->timestamps();
         });

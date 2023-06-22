@@ -18,7 +18,7 @@ class CursoController extends Controller
 
     public function show(Curso $curso){
         $curso->load('coordenacao');
-        $curso->load('turmas');
+        $curso->load('etapas');
         return view('cursos.show', [
             'curso'=>$curso,
         ]);

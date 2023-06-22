@@ -13,8 +13,8 @@ class Curso extends Model
         return $this->belongsTo(Coordenacao::class);
     }
 
-    public function turmas(){
-        return $this->hasMany(Turma::class);
+    public function etapas(){
+        return $this->hasMany(Etapa::class);
     }
 
 }

@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('turmas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('curso_id')
+            $table->foreignId('etapa_id')
                 ->constrained()
                 ->onDelete('CASCADE')
                 ->onUpdate('CASCADE');
             $table->string('nome');
+            $table->string('ano_letivo');
             $table->date('inicio');
             $table->date('fim');
             $table->string('turno');

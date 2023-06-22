@@ -80,52 +80,77 @@
         </div>
     </div>
 
-    <!--card dos cursos da coordenação -->
+    <!--Card com as etapas do curso -->
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
-            <h5 class="card-title fw-semibold">Turmas deste curso</h5>
+            <h5 class="card-title fw-semibold">Etapas</h5>
         </div>
-        <div class="card-body">    
-            <div class="table-responsive">
-                <table id="tbl_alunos" class="table text-nowrap mb-0 align-middle table-striped mt-2">
-                    <thead class="text-dark fs-4">
-                        <tr>
-                            <th class="border-bottom-0">
-                                <h6 class="fw-semibold mb-0">Turma</h6>
-                            </th>                    
-                            <th class="border-bottom-0">
-                                <h6 class="fw-semibold mb-0">Turno</h6>
-                            </th>
-                            <th class="border-bottom-0">
-                                <h6 class="fw-semibold mb-0">Início</h6>
-                            </th>
-                            <th class="border-bottom-0">
-                                <h6 class="fw-semibold mb-0">Término</h6>
-                            </th>
-                            <th class="border-bottom-0">
-                                <h6 class="fw-semibold mb-0">Ações</h6>
-                            </th>
-                        </tr>
-                    </thead>
+        <div class="card-body">
 
-                    <tbody>
-                        @foreach ($curso->turmas as $turma)
-                        <tr>
-                            <td>{{$turma->nome}}</td>
-                            <td>{{$turma->turno}}</td>
-                            <td>{{$turma->inicio}}</td>
-                            <td>{{$turma->fim}}</td>
-                            <td>
-                                <a href="{{route('turmas.show', $turma->id)}}" class="btn btn-primary btn-sm">
-                                <i class="fas fa-info-circle"></i>
-                                Detalhes
-                                </a>
-                            </td>
-                        </tr>
-                      @endforeach
-                    </tbody>
-                </table>
+            <div class="accordion">
+
+                @foreach($curso->etapas as $etapa)
+                    
+                <div class="accordion-item" id="accordionEtapas">
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#etapa{{$etapa->id}}" aria-expanded="false" aria-controls="etapa{{$etapa->id}}">
+                            <strong>{{$etapa->nome}}</strong>
+                          </button>
+                        </h2>
+                        <div id="etapa{{$etapa->id}}" class="accordion-collapse collapse" data-bs-parent="#accordionEtapas">
+                            <div class="accordion-body">
+
+                                <div class="table-responsive">
+                                    <table class="table text-nowrap mb-0 align-middle table-hover mt-2">
+                                        <thead class="text-dark fs-4">
+                                            <tr>
+                                                <th class="border-bottom-0">
+                                                    <h6 class="fw-semibold mb-0">Módulo</h6>
+                                                </th>
+                                                <th class="border-bottom-0">
+                                                    <h6 class="fw-semibold mb-0">Carga Horária</h6>
+                                                </th>
+                                                <th class="border-bottom-0">
+                                                    <h6 class="fw-semibold mb-0">Quantidade de Aulas</h6>
+                                                </th>
+                                                <th class="border-bottom-0">
+                                                    <h6 class="fw-semibold mb-0"></h6>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                    
+                                        <tbody>
+                                            @foreach ($etapa->modulos as $modulo)
+                                            <tr>
+                                                <td>{{$modulo->nome}}</td>
+                                                <td>{{$modulo->carga_horaria}}</td>
+                                                <td>{{$modulo->qtd_aula}}</td>
+                                                <td>
+                                                    <a href="#" class="btn btn-secondary btn-sm">
+                                                        <i class="ti ti-eye"></i>
+                                                    </a>
+                                                    <a href="#" class="btn btn-warning btn-sm">
+                                                        <i class="ti ti-pencil"></i>    
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                          @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                          </div>
+                        </div>
+                      </div>
+
+                </div>
+
+                @endforeach
+
+
             </div>
+           
 
         </div>
     </div>

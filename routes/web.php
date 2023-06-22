@@ -7,7 +7,7 @@ use App\Http\Controllers\CursoController;
 use App\Http\Controllers\DisciplinaController;
 use App\Http\Controllers\ProfessorController;
 use App\Http\Controllers\TurmaController;
-
+use App\Http\Controllers\EtapaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -50,6 +50,14 @@ Route::middleware('auth')->group(function () {
         Route::post('', [ CursoController::class, 'store'])->name('cursos.store');
         Route::get('/create', [CursoController::class, 'create'])->name('cursos.create');
         Route::get('/{curso}', [CursoController::class, 'show'])->name('cursos.show');
+    });
+
+    //Grupo de Rotas das Etapas
+    Route::prefix('etapas')->group(function(){
+        Route::get('', [ EtapaController::class, 'index'])->name('etapas.index');
+        Route::post('', [ EtapaController::class, 'store'])->name('etapas.store');
+        Route::get('/create', [EtapaController::class, 'create'])->name('etapas.create');
+        Route::get('/{etapa}', [EtapaController::class, 'show'])->name('etapas.show');
     });
 
     
