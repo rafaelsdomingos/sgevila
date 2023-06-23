@@ -33,7 +33,7 @@
                         <tr>
                             <td>{{$turma->ano_letivo}}</td>
                             <td>{{$turma->nome}}</td>
-                            <td>{{$turma->curso->nome}}</td>
+                            <td>{{$turma->etapa->curso->nome}}</td>
                             <td>
                                 <a href="{{route('turmas.show', $turma->id)}}" class="btn btn-secondary btn-sm">
                                     <i class="ti ti-eye"></i>

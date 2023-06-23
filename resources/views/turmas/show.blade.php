@@ -151,7 +151,7 @@
                             <thead class="text-dark fs-4">
                                 <tr>
                                     <th class="border-bottom-0">
-                                        <h6 class="fw-semibold mb-0">Módulo</h6>
+                                        <h6 class="fw-semibold mb-0">Módulos</h6>
                                     </th>
         
                                     <th class="border-bottom-0">
@@ -161,7 +161,7 @@
                             </thead>
         
                             <tbody>
-                                @foreach ($turma->modulos as $modulo)
+                                @foreach ($turma->etapa->modulos as $modulo)
                                 <tr>
                                     <td>{{$modulo->nome}}</td>
                                     <td>{{$modulo->carga_horaria}}</td>
