@@ -8,6 +8,9 @@ use App\Http\Controllers\DisciplinaController;
 use App\Http\Controllers\ProfessorController;
 use App\Http\Controllers\TurmaController;
 use App\Http\Controllers\EtapaController;
+use App\Http\Controllers\FrequenciaController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -80,6 +83,8 @@ Route::middleware('auth')->group(function () {
 
 });
 
+Route::get('/frequencias/criar', [FrequenciaController::class, 'criarFrequencias']);
+Route::get('/frequencias/listar', [FrequenciaController::class, 'listarFrequencias']);
 
 //Rota inicial
 //Route::get('/', function () {
