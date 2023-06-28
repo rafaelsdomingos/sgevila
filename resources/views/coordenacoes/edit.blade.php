@@ -5,7 +5,7 @@
 <div class="container-fluid">
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
-            <h5 class="card-title fw-semibold">Cadastro de Coordenações</h5>
+            <h5 class="card-title fw-semibold">EDITAR COORDENAÇÃO</h5>
             <div>
                 <a href="{{route('coordenacoes.show', $coordenacao->id)}}" class="btn btn-secondary">
                     <i class="fas fa-arrow-left"></i>
@@ -39,7 +39,7 @@
                     </div>
                     <div class="col-sm-4 mb-3">
                         <label class="form-label">Telefone</label>
-                        <input class="form-control" name="fone" type="text" value="{{$coordenacao->fone}}" aria-label="" >
+                        <input class="form-control telefone" name="fone" type="text" value="{{$coordenacao->fone}}" aria-label="" >
                     </div>
 
                     <div class="col-sm-4 mb-3">
@@ -95,3 +95,9 @@
 
 
 @endsection
+
+@push('scripts')
+    <script src="{{asset('js/jquery.mask.min.js')}}"></script>
+    <script src="{{asset('js/masks.js')}}"></script>
+    <script src="{{asset('js/form.validation.js')}}"></script>
+@endpush

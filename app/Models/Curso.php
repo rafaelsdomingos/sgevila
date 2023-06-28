@@ -9,6 +9,13 @@ class Curso extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'nome',
+        'coordenacao_id',
+        'modalidade',
+        'descricao',
+    ];
+
     public function coordenacao(){
         return $this->belongsTo(Coordenacao::class);
     }

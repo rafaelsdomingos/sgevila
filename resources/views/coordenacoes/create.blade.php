@@ -16,34 +16,39 @@
         <div class="card-body">
      
                         
-            <form method="POST" action="{{route('coordenacoes.store')}}">
+            <form method="POST" action="{{route('coordenacoes.store')}}" class="needs-validation" novalidate>
                 @csrf
                 <div class="row">
                     <div class="col-md-10 mb-3">
                         <label class="form-label">Nome da Coordenação</label>
-                        <input class="form-control" name="nome" type="text" value="" aria-label="" >
+                        <input class="form-control" name="nome" type="text" value="" aria-label="nome da coordenação" required>
+                        <div class="invalid-feedback">Você deve informar o nome da coordenação</div>
                       
                     </div>
                     <div class="col-sm-2 mb-3">
                         <label class="form-label">Sigla</label>
-                        <input class="form-control" name="sigla" type="text" value="" aria-label="" >
+                        <input class="form-control" name="sigla" type="text" value="" aria-label="sigla" required>
+                        <div class="invalid-feedback">Você deve informar a sigla da coordenação.</div>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-md-4 mb-3">
                         <label class="form-label">Coordenador(a)</label>
-                        <input class="form-control" name="coordenador" type="text" value="" aria-label="" >
+                        <input class="form-control" name="coordenador" type="text" aria-label="responsável pela coordenação" required>
+                        <div class="invalid-feedback">Você deve informar o nome do(a) coordenador(a).</div>
                       
                     </div>
                     <div class="col-sm-4 mb-3">
                         <label class="form-label">Telefone</label>
-                        <input class="form-control" name="fone" type="text" value="" aria-label="" >
+                        <input class="form-control telefone" name="fone" type="text" aria-label="telefone" required>
+                        <div class="invalid-feedback">Você deve informar o telefone da coordenação.</div>
                     </div>
 
                     <div class="col-sm-4 mb-3">
-                        <label class="form-label">Email</label>
-                        <input class="form-control" name="email" type="text" value="" aria-label="" >
+                        <label class="form-label">E-mail</label>
+                        <input class="form-control" name="email" type="text" aria-label="e-mail" required>
+                        <div class="invalid-feedback">Você deve informar o e-mail da coordenação.</div>
                     </div>
                 </div>
 
@@ -58,31 +63,12 @@
                             Limpar
                         </button>
 
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#salvarCoord">
+                        <button type="submit" class="btn btn-success">
                             <i class="ti ti-save"></i>
                             Salvar
                         </button>
                     </div>
                 </div>
-
-                <!--Modal para Salvar -->
-                <div class="modal fade" id="salvarCoord" tabindex="-1" aria-labelledby="salvarCoord" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h6 class="modal-title fs-5" id="salvarCoordLabel"><strong>Salvar Coordenação</strong></h6>
-                            </div>
-                            <div class="modal-body">
-                                Deseja salvar a nova Coordenação?
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-                                <button type="submit" class="btn btn-primary">Salvar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </form>
 
             
@@ -94,3 +80,9 @@
 
 
 @endsection
+
+@push('scripts')
+    <script src="{{asset('js/jquery.mask.min.js')}}"></script>
+    <script src="{{asset('js/masks.js')}}"></script>
+    <script src="{{asset('js/form.validation.js')}}"></script>
+@endpush

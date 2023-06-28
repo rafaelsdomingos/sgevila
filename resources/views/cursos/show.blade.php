@@ -12,7 +12,7 @@
                     Voltar
                 </a>
 
-                <a href="#" class="btn btn-warning">
+                <a href="{{route('cursos.edit', $curso->id)}}" class="btn btn-warning">
                     <i class="ti ti-pencil"></i>
                     Editar
                 </a>
@@ -21,7 +21,7 @@
         <div class="card-body">
      
                         
-            <form method="POST" action="#">
+            <form method="POST" action="{{route('cursos.destroy', $curso->id)}}">
                 @method('DELETE')
                 @csrf
                 <div class="row">

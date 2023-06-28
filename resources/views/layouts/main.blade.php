@@ -119,7 +119,7 @@
             @endcan
             
             <li class="sidebar-item">
-              <a class="sidebar-link" href="#" aria-expanded="false">
+              <a class="sidebar-link" href="{{route('cursos.create')}}" aria-expanded="false">
                 <span>
                   <i class="ti ti-file-plus"></i>
                 </span>

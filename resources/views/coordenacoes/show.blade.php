@@ -12,7 +12,7 @@
                     Voltar
                 </a>
 
-                <a href="#" class="btn btn-warning">
+                <a href="{{route('coordenacoes.edit', $coordenacao->id)}}" class="btn btn-warning">
                     <i class="ti ti-pencil"></i>
                     Editar
                 </a>
@@ -97,7 +97,7 @@
         <div class="card-body">          
             
             <div class="table-responsive">
-                <table id="tbl_alunos" class="table text-nowrap mb-0 align-middle table-striped mt-2">
+                <table id="tbl_alunos" class="table text-nowrap mb-0 align-middle table-hover mt-2">
                     <thead class="text-dark fs-4">
                         <tr>
                             <th class="border-bottom-0">

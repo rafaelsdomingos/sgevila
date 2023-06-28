@@ -49,6 +49,9 @@ Route::middleware('auth')->group(function () {
 
     //Grupo de Rotas dos Cursos
     Route::prefix('cursos')->group(function(){
+        Route::put('/{curso}', [ CursoController::class, 'update'])->name('cursos.update');
+        Route::delete('/{curso}', [ CursoController::class, 'destroy'])->name('cursos.destroy');
+        Route::get('/{curso}/edit', [ CursoController::class, 'edit'])->name('cursos.edit');
         Route::get('', [ CursoController::class, 'index'])->name('cursos.index');
         Route::post('', [ CursoController::class, 'store'])->name('cursos.store');
         Route::get('/create', [CursoController::class, 'create'])->name('cursos.create');
