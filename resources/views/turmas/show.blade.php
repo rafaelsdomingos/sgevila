@@ -166,7 +166,8 @@
                                     <td>{{$modulo->nome}}</td>
                                     <td>{{$modulo->carga_horaria}}</td>
                                     <td>
-                                        <a href="#" class="btn btn-primary btn-sm">
+                                        {{$modulo->id}}-{{$turma->id}}
+                                        <a href="{{ route('modulos.show', [$modulo->id, $turma->id] ) }}" class="btn btn-primary btn-sm">
                                         <i class="fas fa-info-circle"></i>
                                         Detalhes
                                         </a>

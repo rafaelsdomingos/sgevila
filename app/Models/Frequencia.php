@@ -9,5 +9,5 @@ class Frequencia extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['data', 'aluno', 'presenca', 'media'];
+    protected $fillable = ['aluno_id', 'turma_id', 'modulo_id', 'data', 'presenca'];
 }

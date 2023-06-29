@@ -9,6 +9,7 @@ use App\Http\Controllers\ProfessorController;
 use App\Http\Controllers\TurmaController;
 use App\Http\Controllers\EtapaController;
 use App\Http\Controllers\FrequenciaController;
+use App\Http\Controllers\ModuloController;
 
 
 /*
@@ -82,6 +83,23 @@ Route::middleware('auth')->group(function () {
         Route::post('', [ ProfessorController::class, 'store'])->name('professores.store');
         Route::get('/create', [ProfessorController::class, 'create'])->name('professores.create');
         Route::get('/{professor}', [ProfessorController::class, 'show'])->name('professores.show');
+    });
+
+    //Grupo de Rotas das Frequencias
+    Route::prefix('frequencias')->group(function(){
+        //Route::get('', [ TurmaController::class, 'index'])->name('turmas.index');
+        //Route::post('', [ TurmaController::class, 'store'])->name('turmas.store');
+        //Route::get('/create', [TurmaController::class, 'create'])->name('turmas.create');
+        Route::get('/{turma}/{modulo}', [FrequenciaController::class, 'show'])->name('frequencias.show');
+    });
+
+
+    //Grupo de Rotas dos Módulos
+    Route::prefix('modulos')->group(function(){
+        //Route::get('', [ TurmaController::class, 'index'])->name('turmas.index');
+        //Route::post('', [ TurmaController::class, 'store'])->name('turmas.store');
+        //Route::get('/create', [TurmaController::class, 'create'])->name('turmas.create');
+        Route::get('/{modulo}/{turma}', [ModuloController::class, 'show'])->name('modulos.show');
     });
 
 });

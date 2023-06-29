@@ -12,11 +12,20 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('frequencias', function (Blueprint $table) {
-            $table->id();
+            $table->foreignId('aluno_id')
+                ->constrained()
+                ->onDelete('CASCADE')
+                ->onUpdate('CASCADE');
+            $table->foreignId('turma_id')
+                ->constrained()
+                ->onDelete('CASCADE')
+                ->onUpdate('CASCADE');
+            $table->foreignId('modulo_id')
+                ->constrained()
+                ->onDelete('CASCADE')
+                ->onUpdate('CASCADE');
             $table->date('data');
-            $table->string('aluno');
             $table->boolean('presenca')->default(false);
-            $table->float('media')->nullable();
             $table->timestamps();
         });
     }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Modulo;
+use App\Models\Turma;
 use Illuminate\Http\Request;
 
 class ModuloController extends Controller
@@ -34,9 +35,13 @@ class ModuloController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Modulo $modulo)
+    public function show($modulo_id, $turma_id)
     {
-        //
+        if ((!$turma = Turma::find($turma_id)) || (!$modulo = Modulo::find($modulo_id)) ){
+            return redirect()->route('turmas.index');
+        }
+
+        return view('modulos.show', compact('modulo', 'turma'));
     }
 
     /**
