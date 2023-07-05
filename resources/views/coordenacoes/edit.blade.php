@@ -8,7 +8,7 @@
             <h5 class="card-title fw-semibold">EDITAR COORDENAÇÃO</h5>
             <div>
                 <a href="{{route('coordenacoes.show', $coordenacao->id)}}" class="btn btn-secondary">
-                    <i class="fas fa-arrow-left"></i>
+                    <i class="ti ti-arrow-left"></i>
                     Voltar
                 </a>
             </div>

@@ -90,7 +90,7 @@ Route::middleware('auth')->group(function () {
         //Route::get('', [ TurmaController::class, 'index'])->name('turmas.index');
         //Route::post('', [ TurmaController::class, 'store'])->name('turmas.store');
         //Route::get('/create', [TurmaController::class, 'create'])->name('turmas.create');
-        Route::get('/{turma}/{modulo}', [FrequenciaController::class, 'show'])->name('frequencias.show');
+        Route::get('/{turma}', [FrequenciaController::class, 'show'])->name('frequencias.show');
     });
 
 

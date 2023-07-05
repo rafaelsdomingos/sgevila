@@ -53,20 +53,36 @@ class FrequenciaController extends Controller
     }
 
 
-    public function show($turma_id, $modulo_id){
+    public function show($turma_id){
 
-        if ((!$turma = Turma::find($turma_id)) || (!$modulo = Modulo::find($modulo_id)) ){
+        $dataInicio = '2023-01-01';
+        $dataFim = '2023-01-30';
+        
+        if (!$turma = Turma::find($turma_id)){
             return redirect()->route('turmas.index');
         }
 
-        $frequencias = Frequencia::where('turma_id', $turma_id)
-            ->where('modulo_id', $modulo_id)
-            ->whereBetween('data', ['2023-06-01', '2023-06-30'])
+        $turma->load('alunos');
+        $alunos = $turma->alunos->sortBy('nome');
+
+
+        $frequencias = Frequencia::whereBetween('data', [$dataInicio, $dataFim])
             ->orderBy('data')
             ->get();
 
-        //return view('frequencias.show', compact('frequencias'));
-        return $frequencias;
+        $datas = Frequencia::select('data')
+            ->whereBetween('data', [$dataInicio, $dataFim])
+            ->distinct()
+            ->get();
+
+        //Reorganizar os dados das frequências por aluno e data
+        $dadosFrequencias = [];
+        foreach ($frequencias as $frequencia) {
+            $dadosFrequencias[$frequencia->aluno_id][$frequencia->data] = $frequencia->presenca;
+        }
+
+        return view('frequencias', compact('dadosFrequencias', 'datas', 'alunos'));
+        //return $frequencias;
         
     }
     
@@ -76,23 +92,37 @@ class FrequenciaController extends Controller
     {
         //$dataInicio = $request->input('data_inicio');
         //$dataFim = $request->input('data_fim');
-        $dataInicio = '2023-06-01';
-        $dataFim = '2023-06-30';
+        $dataInicio = '2023-01-01';
+        $dataFim = '2023-01-30';
+        $id = 1;
+        
+        if (!$turma = Turma::find($id)){
+            return redirect()->route('turmas.index');
+        }
+
+        $turma->load('alunos');
+        $alunos = $turma->alunos->sortBy('nome');
+
 
         $frequencias = Frequencia::whereBetween('data', [$dataInicio, $dataFim])
-            ->orderBy('aluno_id')
+            ->orderBy('data')
             ->get();
 
-        /* Reorganizar os dados das frequências por aluno e data
+        $datas = Frequencia::select('data')
+            ->whereBetween('data', [$dataInicio, $dataFim])
+            ->distinct()
+            ->get();
+
+        //Reorganizar os dados das frequências por aluno e data
         $dadosFrequencias = [];
         foreach ($frequencias as $frequencia) {
-            //$dadosFrequencias[$frequencia->aluno][$frequencia->data] = $frequencia->presenca;
-            $dadosFrequencias[$frequencia->aluno]['nome'] = $frequencia->aluno;
-            $dadosFrequencias[$frequencia->aluno]['frequencias'][$frequencia->data] = $frequencia->presenca;
-        }*/
+            $dadosFrequencias[$frequencia->aluno_id][$frequencia->data] = $frequencia->presenca;
+            //$dadosFrequencias[$frequencia->aluno]['nome'] = $frequencia->aluno;
+            //$dadosFrequencias[$frequencia->aluno]['frequencias'][$frequencia->data] = $frequencia->presenca;
+        }
 
-        //return view('frequencias', compact('dadosFrequencias'));
-        return $frequencias;
+        return view('frequencias', compact('dadosFrequencias', 'datas', 'alunos'));
+        //return $frequencias;
     }
     
 }

@@ -21,9 +21,7 @@
         <div class="card-body">
      
                         
-            <form method="POST" action="{{route('coordenacoes.destroy', $coordenacao->id)}}">
-                @method('DELETE')
-                @csrf
+            
                 <div class="row">
                     <div class="col-md-10 mb-3">
                         <label class="form-label">Nome da Coordenação</label>
@@ -76,15 +74,19 @@
                             <div class="modal-body">
                                 Deseja realmente deletar a <strong>{{$coordenacao->nome}}</strong>?
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>
-                                <button type="submit" class="btn btn-danger">Deletar</button>
-                            </div>
+                            <form method="POST" action="{{route('coordenacoes.destroy', $coordenacao->id)}}">
+                                @method('DELETE')
+                                @csrf
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>
+                                    <button type="submit" class="btn btn-danger">Deletar</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
 
-            </form>
+            
 
         </div>
     </div>

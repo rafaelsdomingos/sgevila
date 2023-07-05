@@ -25,8 +25,8 @@
                             <th class="border-bottom-0">
                                 <h6 class="fw-semibold mb-0">E-Mail</h6>
                             </th>
-                            <th class="border-bottom-0">
-                                <h6 class="fw-semibold mb-0">Detalhes</h6>
+                            <th class="border-bottom-0 text-center">
+                                <h6 class="fw-semibold mb-0">Ações</h6>
                             </th>
                         </tr>
                     </thead>
@@ -38,12 +38,12 @@
                             <td>{{$coordenacao->sigla}}</td>
                             <td>{{$coordenacao->coordenador}}</td>
                             <td>{{$coordenacao->email}}</td>
-                            <td>
+                            <td class="text-center">
                                 <a href="{{route('coordenacoes.show', $coordenacao->id)}}" class="btn btn-secondary btn-sm">
                                     <i class="ti ti-eye"></i>
                                 </a>
                                 <a href="{{route('coordenacoes.edit', $coordenacao->id)}}" class="btn btn-warning btn-sm">
-                                    <i class="ti ti-pencil"></i>    
+                                    <i class="ti ti-edit"></i>    
                                 </a>
                             </td>
                         </tr>

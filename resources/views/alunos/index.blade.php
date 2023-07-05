@@ -23,9 +23,9 @@
                                 <h6 class="fw-semibold mb-0">Fone 2</h6>
                             </th>
                             <th class="border-bottom-0">
-                                <h6 class="fw-semibold mb-0">Email</h6>
+                                <h6 class="fw-semibold mb-0">E-mail</h6>
                             </th>
-                            <th class="border-bottom-0">
+                            <th class="border-bottom-0 text-center">
                                 <h6 class="fw-semibold mb-0">Ações</h6>
                             </th>
                         </tr>
@@ -38,12 +38,12 @@
                             <td>{{$aluno->fone_contato1}}</td>
                             <td>{{$aluno->fone_contato2}}</td>
                             <td>{{$aluno->email_contato2}}</td>
-                            <td>
+                            <td class="text-center">
                                 <a href="{{route('alunos.show', $aluno->id)}}" class="btn btn-secondary btn-sm" data-toggle="tooltip" data-placement="top" title="Informações do(a) aluno(a)">
                                     <i class="ti ti-eye"></i>
                                 </a>
                                 <a href="{{route('alunos.edit', $aluno->id)}}" class="btn btn-warning btn-sm" data-toggle="tooltip" data-placement="top" title="Editar cadastro do(a) aluno(a)">
-                                    <i class="ti ti-pencil"></i>    
+                                    <i class="ti ti-edit"></i>    
                                 </a>
                             </td>
                         </tr>

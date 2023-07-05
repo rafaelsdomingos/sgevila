@@ -167,7 +167,7 @@
                                     <td>{{$modulo->carga_horaria}}</td>
                                     <td>
                                         {{$modulo->id}}-{{$turma->id}}
-                                        <a href="{{ route('modulos.show', [$modulo->id, $turma->id] ) }}" class="btn btn-primary btn-sm">
+                                        <a href="{{ route('frequencias.show', [$turma->id] ) }}" class="btn btn-primary btn-sm">
                                         <i class="fas fa-info-circle"></i>
                                         Detalhes
                                         </a>

@@ -22,7 +22,7 @@
                             <th class="border-bottom-0">
                                 <h6 class="fw-semibold mb-0">Curso</h6>
                             </th>
-                            <th class="border-bottom-0">
+                            <th class="border-bottom-0 text-center">
                                 <h6 class="fw-semibold mb-0">Ações</h6>
                             </th>
                         </tr>
@@ -34,7 +34,7 @@
                             <td>{{$turma->ano_letivo}}</td>
                             <td>{{$turma->nome}}</td>
                             <td>{{$turma->etapa->curso->nome}}</td>
-                            <td>
+                            <td class="text-center">
                                 <a href="{{route('turmas.show', $turma->id)}}" class="btn btn-secondary btn-sm">
                                     <i class="ti ti-eye"></i>
                                 </a>

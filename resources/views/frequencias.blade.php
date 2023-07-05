@@ -5,20 +5,35 @@
 <div class="container-fluid">
     <div class="card">
     <div class="card-header">
-        <h5 class="card-title fw-semibold text-center">ALUNOS</h5>
+        <h5 class="card-title fw-semibold text-center">FREQUÊNCIA</h5>
     </div>
     <div class="card-body">
         
             <div class="table-responsive">
-                <table id="tbl_alunos" class="table text-nowrap mb-0 align-middle table-hover mt-2">
+                <table id="" class="table text-nowrap mb-0 align-middle table-hover mt-2">
                     <thead>
                         <tr>
-                            <th>Aluno</th>
-                            @foreach ($dadosFrequencias['João']->frequencias as $frequencia)
-                                <th>{{ $frequencia }}</th>
+                            <th>ALUNOS</th>
+                            @foreach ($datas as $data)
+                                <th>{{ \Carbon\Carbon::parse($data->data)->format('d/m') }}</th>
                             @endforeach
                         </tr>
                     </thead>
+                    <tbody>
+                        <tr>
+                        @foreach($alunos as $aluno)
+                        <tr>
+                            <td>
+                                {{$aluno->nome}}
+                            </td>
+                            @foreach($dadosFrequencias[$aluno->id] as $presenca)
+                            <td>
+                                {{$presenca ? 'P' : 'F'}}
+                            </td>
+                            @endforeach
+                        </tr>
+                        @endforeach
+                    </tbody>
                     
                 </table>
             </div>

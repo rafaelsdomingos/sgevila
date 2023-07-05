@@ -138,8 +138,8 @@
                     </div>
                 </div>
 
-                <hr class="border border-primary border-2 opacity-75 my-4">
-                <h5 class="card-title text-center my-3">ESCOLARIDADE</h5>
+                <hr class="border border-dark border-1 opacity-50 my-4">
+                <h5 class="card-title text-center my-4">ESCOLARIDADE</h5>
 
                 <div class="row">
                     <div class="col-sm-6 mb-3">
@@ -188,8 +188,8 @@
                     </div>
                 </div>
 
-                <hr class="border border-primary border-2 opacity-75 my-4">
-                <h5 class="card-title text-center my-3">DOCUMENTAÇÃO</h5>
+                <hr class="border border-dark border-1 opacity-50 my-4">
+                <h5 class="card-title text-center my-4">DOCUMENTAÇÃO</h5>
 
                 <div class="row">
                     <div class="col-sm-4 mb-3">
@@ -213,8 +213,8 @@
                     </div>
                 </div>
 
-                <hr class="border border-primary border-2 opacity-75 my-4">
-                <h5 class="card-title text-center my-3">IDENTIFICAÇÃO DOS PAIS / RESPONSÁVEIS</h5>
+                <hr class="border border-dark border-1 opacity-50 my-4">
+                <h5 class="card-title text-center my-4">IDENTIFICAÇÃO DO PAIS / RESPONSÁVEIS</h5>
 
                 <div class="row">
                     <div class="col-sm-6 mb-3">
@@ -260,8 +260,8 @@
                     </div>
                 </div>
 
-                <hr class="border border-primary border-2 opacity-75 my-4">
-                <h5 class="card-title text-center my-3">CONTATOS</h5>
+                <hr class="border border-dark border-1 opacity-50 my-4">
+                <h5 class="card-title text-center my-4">CONTATOS</h5>
 
                 <div class="row">
                     <div class="col-sm-5 mb-3">
@@ -314,8 +314,8 @@
                     </div>
                 </div>
 
-                <hr class="border border-primary border-2 opacity-75 my-4">
-                <h5 class="card-title text-center my-3">DOCUMENTAÇÃO ENTREGUE</h5>
+                <hr class="border border-dark border-1 opacity-50 my-4">
+                <h5 class="card-title text-center my-4">DOCUMENTAÇÃO ENTREGUE</h5>
 
                 <div class="row">
                     <div class="col-sm-4 mb-3">
