@@ -87,10 +87,12 @@ Route::middleware('auth')->group(function () {
 
     //Grupo de Rotas das Frequencias
     Route::prefix('frequencias')->group(function(){
-        //Route::get('', [ TurmaController::class, 'index'])->name('turmas.index');
+        Route::get('', [FrequenciaController::class, 'index'])->name('frequencias.index');
+        Route::get('/criar', [FrequenciaController::class, 'criarFrequencias']);
+        Route::get('/listar', [FrequenciaController::class, 'listarFrequencias'])->name('frequencias.listar');
         //Route::post('', [ TurmaController::class, 'store'])->name('turmas.store');
         //Route::get('/create', [TurmaController::class, 'create'])->name('turmas.create');
-        Route::get('/{turma}', [FrequenciaController::class, 'show'])->name('frequencias.show');
+        //Route::get('/{turma}', [FrequenciaController::class, 'show'])->name('frequencias.show');
     });
 
 
@@ -104,8 +106,7 @@ Route::middleware('auth')->group(function () {
 
 });
 
-Route::get('/frequencias/criar', [FrequenciaController::class, 'criarFrequencias']);
-Route::get('/frequencias/listar', [FrequenciaController::class, 'listarFrequencias']);
+
 
 //Rota inicial
 //Route::get('/', function () {
