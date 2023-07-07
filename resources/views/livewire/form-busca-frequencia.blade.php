@@ -53,9 +53,18 @@
         <div class="col-sm-6 mb-3">
             <label class="form-label">MÊS</label>
             <select class="form-select" name="mes">
-                <option value="1">JANEIRO</option>
-                <option value="2">FEVEREIRO</option>
-                <option value="3">MARÇO</option>
+                <option value="JANEIRO">JANEIRO</option>
+                <option value="FEVEREIRO">FEVEREIRO</option>
+                <option value="MARÇO">MARÇO</option>
+                <option value="ABRIL">ABRIL</option>
+                <option value="MAIO">MAIO</option>
+                <option value="JUNHO">JUNHO</option>
+                <option value="JULHO">JULHO</option>
+                <option value="AGOSTO">AGOSTO</option>
+                <option value="SETEMBRO">SETEMBRO</option>
+                <option value="OUTUBRO">OUTUBRO</option>
+                <option value="NOVEMBRO">NOVEMBRO</option>
+                <option value="DEZEMBRO">DEZEMBRO</option>
             </select>
         </div>
 
